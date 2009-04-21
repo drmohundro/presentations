@@ -1,0 +1,33 @@
+# Demo 1 - Get-Help Demo
+Get-Help
+Get-Help Get-Command
+Get-Help about_object
+Get-Help Get-Member
+Get-Command
+Get-Help Set-Location
+Set-Location hklm: ; Get-ChildItem
+Set-Location Software/Microsoft/.NETFramework/AssemblyFolders ; Get-ChildItem
+Get-PSDrive
+Set-Location alias: ; Get-ChildItem
+cd function: ; dir
+c: ; dir
+Get-Member -InputObject 5
+5 | Get-Member
+5 | gm
+dir | gm
+# Demo 2 - Pipeline and Filters
+Write-Host Start CMD
+Write-Host Start CYGWIN
+# PowerShell
+Get-Process
+ps
+ps power*
+ps power* | foreach { $_.GetType().FullName }
+ps | foreach { $_.Kill }
+ps | where { ! $_.Responding }
+ps | select MainWindowTitle, ID, Responding
+ps power* | ./PipelineDemo.App.exe
+# Demo 3 - Prompt Customization
+Write-Host Start Presentation PowerShell for PROMPT examples
+# Demo 4 - Formatting
+Write-Host Start Presentation PowerShell for formatting examples

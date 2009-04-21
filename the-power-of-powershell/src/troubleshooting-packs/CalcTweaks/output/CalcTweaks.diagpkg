@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><dcmPS:DiagnosticPackage SchemaVersion="1.0" Localized="false" xmlns:dcmPS="http://www.microsoft.com/schemas/dcm/package/2007" xmlns:dcmRS="http://www.microsoft.com/schemas/dcm/resource/2007">
+    <DiagnosticIdentification>
+        <ID>WW_CalcTweaksExample</ID>
+        <Version>1.0</Version>
+    </DiagnosticIdentification>
+    <DisplayInformation>
+        <Parameters/>
+        <Name>Calculator Tweaks Example</Name>
+        <Description>Tweak calculator to perfection.</Description>
+    </DisplayInformation>
+    <PrivacyLink>http://www.mohundro.com/blog/</PrivacyLink>
+    <PowerShellVersion>2.0</PowerShellVersion>
+    <SupportedOSVersion clientSupported="true" serverSupported="true">6.1</SupportedOSVersion>
+    <Troubleshooter>
+        <Script>
+            <Parameters/>
+            <ProcessArchitecture>Any</ProcessArchitecture>
+            <RequiresElevation>false</RequiresElevation>
+            <RequiresInteractivity>true</RequiresInteractivity>
+            <FileName>TS_CalcTweaks.ps1</FileName>
+            <ExtensionPoint/>
+        </Script>
+        <ExtensionPoint/>
+    </Troubleshooter>
+    <Rootcauses>
+        <Rootcause>
+            <ID>RC_ProgModeIsNotEnabled</ID>
+            <DisplayInformation>
+                <Parameters/>
+                <Name>Programming Mode is not enabled</Name>
+                <Description>Programming Mode is new to Windows Calculator and features common programming operations such as XORing and the viewing of numeric data in binary.</Description>
+            </DisplayInformation>
+            <Resolvers>
+                <Resolver>
+                    <ID>RS_ProgMode</ID>
+                    <DisplayInformation>
+                        <Parameters>
+                            <Parameter>
+                                <Name>P1</Name>
+                                <DefaultValue>default value1</DefaultValue>
+                            </Parameter>
+                        </Parameters>
+                        <Name>Enable Programming Mode</Name>
+                        <Description>Enabling programming mode ultimately helps increase synergistic output.</Description>
+                    </DisplayInformation>
+                    <RequiresConsent>true</RequiresConsent>
+                    <Script>
+                        <Parameters/>
+                        <ProcessArchitecture>Any</ProcessArchitecture>
+                        <RequiresElevation>false</RequiresElevation>
+                        <RequiresInteractivity>true</RequiresInteractivity>
+                        <FileName>RS_ProgMode.ps1</FileName>
+                        <ExtensionPoint/>
+                    </Script>
+                    <ExtensionPoint/>
+                </Resolver>
+            </Resolvers>
+            <Verifier>
+                <Script>
+                    <Parameters/>
+                    <ProcessArchitecture>Any</ProcessArchitecture>
+                    <RequiresElevation>false</RequiresElevation>
+                    <RequiresInteractivity>true</RequiresInteractivity>
+                    <FileName>TS_ProgMode.ps1</FileName>
+                    <ExtensionPoint/>
+                </Script>
+                <ExtensionPoint/>
+            </Verifier>
+            <ContextParameters>
+                <Parameter>
+                    <Name>P1</Name>
+                    <DefaultValue>default value1</DefaultValue>
+                </Parameter>
+            </ContextParameters>
+            <ExtensionPoint/>
+        </Rootcause>
+    </Rootcauses>
+    <Interactions>
+        <SingleResponseInteractions/>
+        <MultipleResponseInteractions/>
+        <TextInteractions/>
+        <PauseInteractions/>
+        <LaunchUIInteractions/>
+    </Interactions>
+    <ExtensionPoint></ExtensionPoint>
+</dcmPS:DiagnosticPackage>

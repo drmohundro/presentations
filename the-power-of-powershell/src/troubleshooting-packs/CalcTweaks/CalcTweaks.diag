@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<dcmPS:DiagnosticPackage SchemaVersion="1.0" Localized="false" xmlns:dcmPS="http://www.microsoft.com/schemas/dcm/package/2007" xmlns:dcmRS="http://www.microsoft.com/schemas/dcm/resource/2007">
+    <DiagnosticIdentification>
+        <ID>WW_CalcTweaksExample</ID>
+        <Version>1.0</Version>
+    </DiagnosticIdentification>
+    <DisplayInformation>
+        <Parameters />
+        <Name>
+            <dcmRS:LocalizeResourceElement comment="This short title is displayed to the user when they are browsing for content in the Health Center UI." index="1">Calculator Tweaks Example</dcmRS:LocalizeResourceElement>
+        </Name>
+        <Description>
+            <dcmRS:LocalizeResourceElement comment="This is a brief, unformatted summary description of the problem that gives more detail than the title." index="2">Tweak calculator to perfection.</dcmRS:LocalizeResourceElement>
+        </Description>
+    </DisplayInformation>
+    <PrivacyLink>http://www.mohundro.com/blog/</PrivacyLink>
+    <PowerShellVersion>2.0</PowerShellVersion>
+    <SupportedOSVersion clientSupported="true" serverSupported="true">6.1</SupportedOSVersion>
+    <Troubleshooter>
+        <Script>
+            <Parameters />
+            <ProcessArchitecture>Any</ProcessArchitecture>
+            <RequiresElevation>false</RequiresElevation>
+            <RequiresInteractivity>true</RequiresInteractivity>
+            <FileName>TS_CalcTweaks.ps1</FileName>
+            <ExtensionPoint />
+        </Script>
+        <ExtensionPoint />
+    </Troubleshooter>
+    <Rootcauses>
+        <Rootcause>
+            <ID>RC_ProgModeIsNotEnabled</ID>
+            <DisplayInformation>
+                <Parameters />
+                <Name>
+                    <dcmRS:LocalizeResourceElement comment="This is the title of a computer problem  that is displayed as part of an Advanced User view" index="3">Programming Mode is not enabled</dcmRS:LocalizeResourceElement>
+                </Name>
+                <Description>
+                    <dcmRS:LocalizeResourceElement comment="This is a summary description of a computer problem  that is displayed as part of an Advanced User view" index="4">Programming Mode is new to Windows Calculator and features common programming operations such as XORing and the viewing of numeric data in binary.</dcmRS:LocalizeResourceElement>
+                </Description>
+            </DisplayInformation>
+            <Resolvers>
+                <Resolver>
+                    <ID>RS_ProgMode</ID>
+                    <DisplayInformation>
+                        <Parameters>
+                            <Parameter>
+                                <Name>P1</Name>
+                                <DefaultValue>default value1</DefaultValue>
+                            </Parameter>
+                        </Parameters>
+                        <Name>
+                            <dcmRS:LocalizeResourceElement comment="This is the title of a solution to a computer problem  that is displayed as part of an Advanced User view" index="5">Enable Programming Mode</dcmRS:LocalizeResourceElement>
+                        </Name>
+                        <Description>
+                            <dcmRS:LocalizeResourceElement comment="This is a summary description of a solution to a computer problem that is displayed as part of an Advanced User view" index="6">Enabling programming mode ultimately helps increase synergistic output.</dcmRS:LocalizeResourceElement>
+                        </Description>
+                    </DisplayInformation>
+                    <RequiresConsent>true</RequiresConsent>
+                    <Script>
+                        <Parameters />
+                        <ProcessArchitecture>Any</ProcessArchitecture>
+                        <RequiresElevation>false</RequiresElevation>
+                        <RequiresInteractivity>true</RequiresInteractivity>
+                        <FileName>RS_ProgMode.ps1</FileName>
+                        <ExtensionPoint />
+                    </Script>
+                    <ExtensionPoint />
+                </Resolver>
+            </Resolvers>
+            <Verifier>
+                <Script>
+                    <Parameters />
+                    <ProcessArchitecture>Any</ProcessArchitecture>
+                    <RequiresElevation>false</RequiresElevation>
+                    <RequiresInteractivity>true</RequiresInteractivity>
+                    <FileName>TS_ProgMode.ps1</FileName>
+                    <ExtensionPoint />
+                </Script>
+                <ExtensionPoint />
+            </Verifier>
+            <ContextParameters>
+                <Parameter>
+                    <Name>P1</Name>
+                    <DefaultValue>default value1</DefaultValue>
+                </Parameter>
+            </ContextParameters>
+            <ExtensionPoint />
+        </Rootcause>
+    </Rootcauses>
+    <Interactions>
+        <SingleResponseInteractions />
+        <MultipleResponseInteractions />
+        <TextInteractions />
+        <PauseInteractions />
+        <LaunchUIInteractions />
+    </Interactions>
+    <ExtensionPoint></ExtensionPoint>
+</dcmPS:DiagnosticPackage>

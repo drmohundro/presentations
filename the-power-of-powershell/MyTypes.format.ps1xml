@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- *******************************************************************
+These sample files contain formatting information used by the Windows 
+PowerShell engine. Do not edit or change the contents of this file 
+directly. Please see the Windows PowerShell documentation or type 
+Get-Help Update-FormatData for more information.
+
+Copyright (c) Microsoft Corporation.  All rights reserved.
+ 
+THIS SAMPLE CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY 
+OF ANY KIND,WHETHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO 
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A PARTICULAR
+PURPOSE. IF THIS CODE AND INFORMATION IS MODIFIED, THE ENTIRE RISK OF USE
+OR RESULTS IN CONNECTION WITH THE USE OF THIS CODE AND INFORMATION 
+REMAINS WITH THE USER.
+******************************************************************** -->
+
+<Configuration>
+    <ViewDefinitions>
+        <View>
+            <Name>process</Name>
+            <ViewSelectedBy>
+                <TypeName>System.Diagnostics.Process</TypeName>
+                <TypeName>Deserialized.System.Diagnostics.Process</TypeName>
+            </ViewSelectedBy>
+            <TableControl>
+                <TableHeaders>
+                    <TableColumnHeader>
+                        <Label>Handles</Label>
+                        <Width>7</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>NPM(K)</Label>
+                        <Width>7</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>PM(K)</Label>
+                        <Width>8</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>WS(K)</Label>
+                        <Width>10</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>VM(M)</Label>
+                        <Width>5</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Label>CPU(s)</Label>
+                        <Width>8</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+                    <TableColumnHeader>
+                        <Width>6</Width>
+                        <Alignment>right</Alignment>
+                    </TableColumnHeader>
+					<!-- new!!! -->
+					<TableColumnHeader>
+						<Label>Window Title</Label>
+						<Width>40</Width>
+						<Alignment>Left</Alignment>
+					</TableColumnHeader>
+					<!-- end new!!! -->
+                    <TableColumnHeader />
+                </TableHeaders>
+                <TableRowEntries>
+                    <TableRowEntry>
+                        <TableColumnItems>
+                            <TableColumnItem>
+                                <PropertyName>HandleCount</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <ScriptBlock>[int]($_.NPM / 1024)</ScriptBlock>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <ScriptBlock>[int]($_.PM / 1024)</ScriptBlock>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <ScriptBlock>[int]($_.WS / 1024)</ScriptBlock>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <ScriptBlock>[int]($_.VM / 1048576)</ScriptBlock>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <ScriptBlock>
+if ($_.CPU -ne $()) 
+{ 
+    $_.CPU.ToString("N") 
+}
+				</ScriptBlock>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>Id</PropertyName>
+                            </TableColumnItem>
+                            <TableColumnItem>
+                                <PropertyName>ProcessName</PropertyName>
+                            </TableColumnItem>
+							<!-- new!!! -->
+							<TableColumnItem>
+								<PropertyName>MainWindowTitle</PropertyName>
+							</TableColumnItem>
+							<!-- end new!!! -->
+                        </TableColumnItems>
+                    </TableRowEntry>
+                </TableRowEntries>
+            </TableControl>
+        </View>
+    </ViewDefinitions>
+</Configuration>

@@ -1,0 +1,7 @@
+archive
+the-power-of-powershell/src/example-scripts/proprietary
+bin
+obj
+*.csproj.user
+*.cache
+*.suo
