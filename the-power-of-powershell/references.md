@@ -21,9 +21,11 @@ Tools/Code
 ==========
 - [PowerShell Community Extensions - Home] [pscx]
 - [PowerTab] [powertab]
+- [PowerBoots] [boots]
 
 [pscx]: http://www.codeplex.com/PowerShellCX
 [powertab]: http://thepowershellguy.com/blogs/posh/pages/powertab.aspx
+[boots]: http://huddledmasses.org/powerboots/
 
 
 Community
