@@ -16,7 +16,6 @@ Blogs
 [dougfinke]: http://dougfinke.com/blog/
 [mo]: http://www.mohundro.com/blog/
 
-
 Tools/Code
 ==========
 - [PowerShell Community Extensions - Home] [pscx]
@@ -27,20 +26,17 @@ Tools/Code
 [powertab]: http://thepowershellguy.com/blogs/posh/pages/powertab.aspx
 [boots]: http://huddledmasses.org/powerboots/
 
-
 Community
 =========
 - [PowerShellCommunity.org] [powershellcommunity]
 
 [powershellcommunity]: http://powershellcommunity.org/
 
-
 Products
 ========
 - [PowerShellPlus Professional Products Idera] [powershell-plus]
 
 [powershell-plus]: http://www.idera.com/Products/PowerShell/
-
 
 Helpful or Fun Posts
 ====================
