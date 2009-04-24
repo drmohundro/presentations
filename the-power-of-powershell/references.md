@@ -46,6 +46,7 @@ Helpful or Fun Posts
 - [Windows PowerShell Explaining Objects To Non-Programmers] [post-4]
 - [Windows PowerShell Windows, PowerShell and WMI - Unveiling Microsoft's Best Kept Secret] [post-5]
 - [Chris Green's introductory PowerShell presentation from Tech Ed 2007] [post-6]
+- [A WPF Countdown Timer in PowerShell 2.0] [post-7]
 
 [post-1]: http://blogs.msdn.com/powershell/archive/2007/01/24/powershell-cheat-sheet.aspx
 [post-2]: http://thepowershellguy.com/blogs/posh/archive/2008/08/04/powershell.aspx
@@ -53,3 +54,4 @@ Helpful or Fun Posts
 [post-4]: http://blogs.msdn.com/powershell/archive/2008/06/17/explaining-objects-to-non-programmers.aspx
 [post-5]: http://blogs.msdn.com/powershell/archive/2008/06/17/windows-powershell-and-wmi-unveiling-microsoft-s-best-kept-secret.aspx
 [post-6]: http://blogs.msdn.com/chris.green/archive/2007/12/17/presentation-and-demo-material-an-introduction-to-powershell.aspx
+[post-7]: http://huddledmasses.org/a-wpf-countdown-timer-in-powerboots/
