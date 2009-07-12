@@ -1,1 +1,0 @@
-# forget this nonsense, just use ~/Documents/WindowsPowerShell/Modules/PowerBoots/Samples/Samples.ps1

@@ -1,0 +1,4 @@
+### NOTE 
+### run these commands from an elevated command prompt! 
+
+Enter-PSSession localhost

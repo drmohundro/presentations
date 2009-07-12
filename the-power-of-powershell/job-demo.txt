@@ -1,0 +1,8 @@
+### NOTE 
+### run these commands from an elevated command prompt! 
+
+Invoke-Command localhost { ls /windows/system32 } -AsJob
+
+Get-Job
+
+Receive-Job -Id 1
