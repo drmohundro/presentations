@@ -12,8 +12,8 @@ David Mohundro
 
 * Quick Intro
   * What is PowerShell?
-  * Simple syntax overview
-  * Quick script
+  * Quick syntax overview
+  * Quick script walkthrough
     * mo> what should I use?
 
 * More advanced

@@ -98,15 +98,20 @@ d----         3/22/2013   2:57 PM            sublime-projects
 
 <..>
 
-<pre><code><span>cd c:\temp</span>
+<pre><code><span># Changing directories
+cd c:\temp</span>
 
-<span class="fragment">dir</span>
+<span class="fragment"># Getting directory contents
+dir</span>
 
-<span class="fragment">mkdir foo</span>
+<span class="fragment"># Making directories
+mkdir foo</span>
 
-<span class="fragment">cd foo</span>
+<span class="fragment"># Again, changing directories
+cd foo</span>
 
-<span class="fragment">rmdir foo</span>
+<span class="fragment"># Removing directories
+rmdir foo</span>
 </code></pre>
     
 <..>
@@ -115,13 +120,17 @@ d----         3/22/2013   2:57 PM            sublime-projects
 
 <..>
 
-<pre><code><span>Get-ChildItem -include *.cs -recurse | Select-String console.writeline</span>
+<pre><code><span># Searching all C# files for "console.writeline"
+Get-ChildItem -include *.cs -recurse | Select-String console.writeline</span>
 
-<span class="fragment">Get-Process | where WorkingSet -ge 125mb</span>
+<span class="fragment"># Get all processes whose memory usage is over 125mb
+Get-Process | where WorkingSet -ge 125mb</span>
 
-<span class="fragment">Get-ChildItem HKCU:/Software/Microsoft/Windows/CurrentVersion/Screensavers</span>
+<span class="fragment"># Get list of screensavers from registry
+Get-ChildItem HKCU:/Software/Microsoft/Windows/CurrentVersion/Screensavers</span>
 
-<span class="fragment">Get-WmiObject CIM_PhysicalMemory | 
+<span class="fragment"># Get info about physical memory modules
+Get-WmiObject CIM_PhysicalMemory | 
   Select-Object @{Name='Capacity';Expression = {$_.Capacity / 1gb}}, DataWidth, DeviceLocator, PartNumber, SerialNumber, Status, TotalWidth, TypeDetail | 
   Format-Table -autosize</span>
 </code></pre>
@@ -129,7 +138,11 @@ d----         3/22/2013   2:57 PM            sublime-projects
 <aside class="notes" data-markdown>
   * grab all cs files recursively and search for the string console.writeline
   * grab all processes whose working set memory usage is over 125 mb
+    * note that you can use identifiers like mb (kb, gb, tb, pb work, too... sorry, no exabytes yet)
   * use the registry provider to see which screensavers are available... useful? nah, just fun.
+    * powershell has "PSProviders" to emulate file systems for things that aren't inherently file systems
+      * like aliases, variables, functions, registry, environment variables, IIS websites/apppools, and more
+      * you can write your own
     * notice we used the same command that lists files
   * query WMI to see about physical memory and capacity on the box (can be remote, too)
 </aside>
