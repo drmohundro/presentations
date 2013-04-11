@@ -40,7 +40,7 @@ Yahoo has an RSS based API that we can use at [http://developer.yahoo.com/weathe
 <..>
 
 ## Get-Weather.ps1
-### Documentation Header
+Let's create the file and add some basic documentation
 
     <#
     .Synopsis
@@ -66,6 +66,10 @@ Yahoo has an RSS based API that we can use at [http://developer.yahoo.com/weathe
 
 ## The Param declaration
 
+We've got documentation... how do we want to call this script? Maybe `Get-Weather -zipCode 12345 -inFahrenheit`? 
+
+We can default to Fahrenheit.
+
 <pre><code>param (
     [Parameter(Mandatory)]
     [string]
@@ -82,12 +86,33 @@ Yahoo has an RSS based API that we can use at [http://developer.yahoo.com/weathe
 
 ## Let's call the API!
 
-    # Invoke-RestMethod new in v3
-    Invoke-RestMethod "http://weather.yahooapis.com/forecastrss?p=$ZipCode&u=$temperatureUnit"
+<span class="fragment">
+But... what now? We *could* pull in [System.ServiceModel.Syndication](http://msdn.microsoft.com/en-us/library/system.servicemodel.syndication.aspx) to parse the RSS, but that seems... less than ideal.
+</span>
+
+<span class="fragment">
+Let's try finding something useful with `Get-Command`
+</span>
+
+<pre class="fragment"><code># Invoke-RestMethod new in v3
+Invoke-RestMethod "http://weather.yahooapis.com/forecastrss?p=$ZipCode&u=$temperatureUnit"
+</code></pre>
 
 <aside class="notes" data-markdown>
 * http://weather.yahooapis.com/forecastrss?p=38002&u=F
   * pull it up in a browser to show what it looks like
+
+<pre>
+gcm *web*
+gcm *web* | where modulename -ne 'WebAdministration'
+gcm *web* -commandtype cmdlet | where modulename -ne 'WebAdministration'
+# Hmm... Invoke-WebRequests looks promising.
+get-help invoke-webrequest
+# check out the related links... Invoke-RestMethod
+get-help invoke-resetmethod -full
+# check out the RSS example... RIGHT THERE!!!
+</pre>
+
 * use Invoke-RestMethod (which knows about RSS) against it
 * $result = Invoke-RestMethod "http://weather.yahooapis.com/forecastrss?p=38002&u=F" | select Title, Condition, Forecast
   * look at the $result instance
