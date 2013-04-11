@@ -13,8 +13,7 @@ David Mohundro
 * Quick Intro
   * What is PowerShell?
   * Quick syntax overview
-  * Quick script walkthrough
-    * mo> what should I use?
+  * Writing our first script
 
 * More advanced
   * Profile customizations

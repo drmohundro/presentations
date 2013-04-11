@@ -1,5 +1,38 @@
 # Creating A Script
 
+<..>
+
+## Before we get started
+### The top four cmdlets to remember...
+
+        Get-Help
+        # alias is man
+        # can also use by typing in a command and then -?
+
+        Get-Command
+        # alias is gcm
+        # sort of like `which` in UNIX
+
+        Get-Member
+        # alias is gm
+        # usually used by piping something into `Get-Member`
+
+        Get-PSDrive
+        # get currently mounted PSDrives
+        # i.e. what can I "cd" into
+
+
+<aside class="notes" data-markdown>
+It would be good to demo all of these if time allows... *especially* get-command and get-member
+* Get-Command (useful to see *what* all is available to call)
+    * go ahead and run `get-command` to show all available commands
+* Get-Member (useful to see *what* all is available to call *on an object*)
+    * go ahead and run `dir | gm` to show everything is .NET
+</aside>
+<..>
+
+## Scenario
+
 Let's find out what the weather is like.
 
 Yahoo has an RSS based API that we can use at [http://developer.yahoo.com/weather/](http://developer.yahoo.com/weather/).
