@@ -2,6 +2,26 @@
 
 <..>
 
+## Quick Aside About Continuous Delivery
+
+We try to follow continuous delivery at work... meaning that [any commit to our
+mainline branch can go to
+production](http://continuousdelivery.com/2010/08/continuous-delivery-vs-continuous-deployment/).
+Related to this, we try to avoid the concept of [snowflake
+servers](http://martinfowler.com/bliki/SnowflakeServer.html), a term coined by
+Martin Fowler.
+
+Practically speaking, the rest of my slides cover how we implement continuous
+delivery with PowerShell.
+
+<aside class="notes" data-markdown>
+* every snowflake is unique from all other snowflakes
+    * that makes snowflakes special
+    * it makes servers... *bad*
+</aside>
+
+<..>
+
 # Build Scripts!
 
 <..>
