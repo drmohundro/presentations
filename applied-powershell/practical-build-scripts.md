@@ -95,8 +95,7 @@ Task Deploy -depends Compile {
   * Utility methods are shared in `properties`
   * Allows for TeamCity-specific functionality plus debug builds locally
 * We do more than just compile our code
-  * We of course call msbuild
-  * We run unit tests
+  * We also run unit tests
   * We added a call to `aspnet_compiler` to verify our Razor views 
 * Things we *don't* do
   * We don't zip up our builds... we let TeamCity do this

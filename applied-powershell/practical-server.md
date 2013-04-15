@@ -38,12 +38,17 @@ We can go from a fresh Windows Server 2008 R2 (or 2012) VM to a fully configured
 
     # needed for the IIS: psdrive
     Import-Module WebAdministration
-    
+
     # list all started appPools
     ls ./AppPools | where State -eq 'Started'
-    
+
     # see if an appPool is 32-bit or not
     Get-Item .\AppPools\MyAppPoolName | select enable32BitAppOnWin64
-    
+
     # create a new website
     New-Website 'powershell-yay' -PhysicalPath 'c:\temp'
+
+<aside class="notes" data-markdown>
+* gvim c:\temp\index.html
+* save and pull up localhost
+</aside>

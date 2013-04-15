@@ -1,4 +1,5 @@
-# So... what is this PowerShell thing?
+## So... what is this
+# PowerShell thing?
 
 <..>
 
@@ -14,7 +15,7 @@ via [wikipedia](http://en.wikipedia.org/wiki/Windows_PowerShell)
 
 ## More to the point
 
-* Object-oriented 
+* Object-oriented
 * Command line shell
 * .NET-based scripting language
 * Hostable
@@ -46,7 +47,8 @@ via [Jeffrey Snover's Lang.Net PowerShell Talk](http://blogs.msdn.com/powershell
 
 <..>
 
-### This has everything to do with Microsoft realizing that the GUI isn't always the right tool for the job
+### This has everything to do with Microsoft realizing that
+## the GUI isn't always the right tool for the job
 
 <aside class="notes" data-markdown>
   As an example, we discovered a couple years ago that, while SQL Server ships
@@ -113,7 +115,7 @@ cd foo</span>
 <span class="fragment"># Removing directories
 rmdir foo</span>
 </code></pre>
-    
+
 <..>
 
 ## Surely... that isn't all...
@@ -130,8 +132,8 @@ Get-Process | where WorkingSet -ge 125mb</span>
 Get-ChildItem HKCU:/Software/Microsoft/Windows/CurrentVersion/Screensavers</span>
 
 <span class="fragment"># Get info about physical memory modules
-Get-WmiObject CIM_PhysicalMemory | 
-  Select-Object @{Name='Capacity';Expression = {$_.Capacity / 1gb}}, DataWidth, DeviceLocator, PartNumber, SerialNumber, Status, TotalWidth, TypeDetail | 
+Get-WmiObject CIM_PhysicalMemory |
+  Select-Object @{Name='Capacity';Expression = {$_.Capacity / 1gb}}, DataWidth, DeviceLocator, PartNumber, SerialNumber, Status, TotalWidth, TypeDetail |
   Format-Table -autosize</span>
 </code></pre>
 
@@ -153,8 +155,8 @@ Get-WmiObject CIM_PhysicalMemory |
 
 <pre><code>$prodServers = '...'
 $prodServers |
-  foreach { Get-Service -ComputerName $_ | 
-    where { $_.DisplayName -match '(SUE|ServiceU)' -or $_.Name -match '^Su\w+' } 
+  foreach { Get-Service -ComputerName $_ |
+    where { $_.DisplayName -match '(SUE|ServiceU)' -or $_.Name -match '^Su\w+' }
   } |
   select @{
     Name='Role';
@@ -168,7 +170,7 @@ $prodServers |
   select -unique Role, Name, DisplayName |
   ConvertTo-Html |
   Out-File .\WindowsServicesReport.html -Encoding ASCII</code></pre>
-  
+
 <..>
 
 ## So... actually pretty powerful after all

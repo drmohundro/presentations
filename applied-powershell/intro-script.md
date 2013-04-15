@@ -66,7 +66,7 @@ Let's create the file and add some basic documentation
 
 ## The Param declaration
 
-We've got documentation... how do we want to call this script? Maybe `Get-Weather -zipCode 12345 -inFahrenheit`? 
+We've got documentation... how do we want to call this script? Maybe `Get-Weather -zipCode 12345 -inFahrenheit`?
 
 We can default to Fahrenheit.
 
@@ -87,7 +87,7 @@ We can default to Fahrenheit.
 ## Let's call the API!
 
 <span class="fragment">
-But... what now? We *could* pull in [System.ServiceModel.Syndication](http://msdn.microsoft.com/en-us/library/system.servicemodel.syndication.aspx) to parse the RSS, but that seems... less than ideal.
+But... how? We *could* pull in [System.ServiceModel.Syndication](http://msdn.microsoft.com/en-us/library/system.servicemodel.syndication.aspx) to parse the RSS, but that seems... less than ideal.
 </span>
 
 <span class="fragment">

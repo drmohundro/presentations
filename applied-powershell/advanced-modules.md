@@ -61,7 +61,7 @@ manifest modules.</blockquote>
 
 <..>
 
-## Wouldn't it be nice if I could install OSS modules?
+### Wouldn't it be nice if I could install OSS modules?
 
 I've found that, when I have a good idea, someone has usually beat me to it.
 

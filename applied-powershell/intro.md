@@ -4,8 +4,6 @@ David Mohundro
 
 [mohundro.com](http://mohundro.com)
 
-[@drmohundro](http://twitter.com/drmohundro)
-
 <-->
 
 ## Outline
@@ -21,6 +19,6 @@ David Mohundro
   * Hosting PowerShell from your code
 
 * Practical applications
-  * Build scripts (Psake, etc.)
-  * Automated deployments
-  * Server (IIS, Windows Features, etc.)
+  * Build scripts
+  * Automating deployments
+  * Configuring servers
