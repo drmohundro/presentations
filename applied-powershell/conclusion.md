@@ -23,3 +23,5 @@ But... we don't have time.
 David Mohundro
 
 [mohundro.com](http://mohundro.com)
+
+[Presentation is available on Github](https://github.com/drmohundro/presentations)
