@@ -16,12 +16,13 @@
     $intVar = '55'
     $intVar = 'hello'   # error because this can't become a number
 
-    # validatable types (new in version 3!)
+    # validatable types
     [ValidateRange(0,10)][int]$rangedInt = 1
     $rangedInt = 11    # ERROR!
 
 <aside class="notes" data-markdown>
-  variables are prefixed with a $... feels like Perl huh?
+  * variables are prefixed with a $... feels like Perl huh?
+  * other validate options like: ValidatePattern, ValidateScript, ValidateSet and more
 </aside>
 
 <..>
