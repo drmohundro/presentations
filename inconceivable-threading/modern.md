@@ -17,6 +17,7 @@
 
 Note:
 - ResourceDownloader / GetResource.ashx is used basically to proxy images on templates through our site so that all resources are served over HTTPS
+    - See GetResource.ashx.cs (can't share unfortunately)
 - Why did it need to be threaded in the first place?
     - Remember that ticketing bug with the Singing Christmas Tree and the Bellevue website from last year?
     - They were using an old template that referenced an image on the Bellevue website instead of our website
