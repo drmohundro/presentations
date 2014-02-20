@@ -62,6 +62,9 @@ Note:
 
 ## Example 02: Single Thread (The Wrong Way)
 
+      var thread = new System.Threading.Thread(DoWork);
+      thread.Start();
+
 * All we did waw new up a `System.Threading.Thread` instance and pointed it to our work method
 * Disclaimer - this code breaks some rules... in fact, it breaks *the golden rule of threading*
    * Never update anything on the UI thread if you're not on the UI thread
@@ -75,7 +78,13 @@ Note:
    - Why?
    - Because you're basically updating the UI thread and your work thread can't spend its time actually counting
 
+<..>
+
 ## Example 02: Fix the GUI Thread
+
+      BeginInvoke(new Action<object>(x => {
+         txtCount.Text = x.ToString();
+      }), i);
 
 * In WinForms, you use `Control.Invoke` or `Control.BeginInvoke`
    * `Invoke` executes on the UI thread, but waits for completion before continuing (can prevent shared state issues)

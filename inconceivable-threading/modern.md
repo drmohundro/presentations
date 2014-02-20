@@ -38,8 +38,7 @@ Note:
 
 <div style="float: left; width: 45%;">
 <pre>
-<code class="cs">
-Parallel.ForEach(list, item => {
+<code class="cs">Parallel.ForEach(list, item => {
     // op (all in parallel)
 });
 
@@ -51,8 +50,7 @@ Parallel.For(0, 100, idx => {
 
 <div style="float: right; width: 45%;">
 <pre>
-<code class="cs">
-foreach (var item in list) {
+<code class="cs">foreach (var item in list) {
     // op (not in parallel)
 }
 
@@ -77,8 +75,7 @@ Note:
 
 <div style="float: left; width: 45%;">
 <pre>
-<code class="cs">
-(from x in someResults
+<code class="cs">(from x in someResults
 where x % 2 == 0
 select x).
 AsParallel().
@@ -88,8 +85,7 @@ Aggregate((x, y) => x + y);
 
 <div style="float: right; width: 45%;">
 <pre>
-<code class="cs">
-(from x in someResults
+<code class="cs">(from x in someResults
 where x % 2 == 0
 select x).
 Aggregate((x, y) => x + y);
