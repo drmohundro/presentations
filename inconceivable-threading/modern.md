@@ -2,42 +2,6 @@
 
 <..>
 
-## Example 05: IAsyncResult
-
-* Sometimes called the [Asynchronous Programming Model \(APM\)](http://msdn.microsoft.com/en-us/library/ms228963.aspx)
-* 80+% of the time you consume APM instead of writing it yourself
-* Usually only have to implement it when you're writing your own libraries
-
-<..>
-
-## Example 06: Why IAsyncResult versus...?
-
-* So... why would I go through all of that complexity as compared to just using a ThreadPool thread on my own?
-    * It has *everything* to do with having a blocking thread or not
-
-Note:
-- ResourceDownloader / GetResource.ashx is used basically to proxy images on templates through our site so that all resources are served over HTTPS
-    - See GetResource.ashx.cs (can't share unfortunately)
-- Why did it need to be threaded in the first place?
-    - Remember that ticketing bug with the Singing Christmas Tree and the Bellevue website from last year?
-    - They were using an old template that referenced an image on the Bellevue website instead of our website
-    - Their site couldn't handle the load (or had a bug or something)
-    - Our site could handle it fine... except that we were waiting on their site to serve the image
-    - And thus, our site was now having issues
-    - Note that this isn't the kind of problem that can be solved by adding hardware either
-        - We were running at very low CPU because we weren't doing ANYTING
-        - IIS was still serving requests, but remember the scheduling discussion from last time? The CPU has to give all of the threads a chance to work... it doesn't know if one is blocking or not.
-- Initial version doesn't even pretend to use threading
-- Threaded version uses a thread... but still waits for the results
-In fact, with that version, we've got TWO blocking threads now instead of just one – it got WORSE
-- Final version is more complex, but the .NET Framework is trying to guide you down the right path
-    - Look at IAsyncHttpHandler versus the IHttpHandler
-    - See http://msdn.microsoft.com/en-us/library/system.web.ihttphandler(v=vs.110).aspx
-    - ResourceDownloader is actually used by GetResource.ashx.cs
-    - Note that the real version actually uses a custom AsyncData object instead of an object array
-
-<..>
-
 ## Task Parellel Library
 
 * AKA Parallel Extensions AKA PFX AKA TPL...
