@@ -37,7 +37,7 @@ In fact, with that version, we've got TWO blocking threads now instead of just o
 
 <..>
 
-## Example 07: Task Parellel Library
+## Task Parellel Library
 
 * AKA Parallel Extensions AKA PFX AKA TPL...
 * Built by Microsoft Research and CTPs were available as early as 2007 for .NET 3.5
@@ -137,7 +137,7 @@ Note:
 
 <..>
 
-## Example 08: TPL, PLINQ, etc.
+## Example 07: TPL, PLINQ, etc.
 
 <..>
 
@@ -156,7 +156,7 @@ Note:
 
 <..>
 
-## Example 09: Continuations! (and async)
+## Example 08: Continuations! (and async)
 
 * Quick vocabulary
     * Coroutine
@@ -168,7 +168,7 @@ Note:
 
 <..>
 
-## Example 10: Deployer - Async Port
+## Example 09: Deployer - Async Port
 
 * Things to note
     * .NET 4.5
