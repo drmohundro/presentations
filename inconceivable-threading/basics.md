@@ -118,6 +118,24 @@ Note:
 
 ## Example 03: BackgroundWorker
 
+      using (var worker = new System.ComponentModel.BackgroundWorker()) {
+         worker.WorkerReportsProgress = true;
+
+         worker.DoWork += DoWork;
+         worker.ProgressChanged += (o, args) => {
+            txtCount.Text = args.UserState.ToString();
+         };
+         worker.RunWorkerCompleted += (o, args) => {
+            txtTotalTime.Text = args.Result.ToString();
+         };
+
+         worker.RunWorkerAsync();
+      }
+
+<..>
+
+## Example 03: BackgroundWorker
+
 * Introduced in .NET 2.0 because threading is hard
    * And because everyone was updating the UI thread from the background thread
 * It falls in the easy category because...
@@ -128,6 +146,8 @@ Note:
 <..>
 
 ## Example 04: ThreadPool Threads
+
+      ThreadPool.QueueUserWorkItem(DoWork);
 
 * Thread construction is expensive
    * They're good for long running background tasks, but if you're doing lots of small tasks, use a `ThreadPool` thread instead
@@ -178,6 +198,11 @@ Note:
 <..>
 
 ## Example 05: IAsyncResult
+
+      var iar = dlg.BeginInvoke(
+         arg,
+         Callback,
+         new Tuple<Func<int, int>, int>(dlg, arg));
 
 * Sometimes called the [Asynchronous Programming Model \(APM\)](http://msdn.microsoft.com/en-us/library/ms228963.aspx)
 * 80+% of the time you consume APM instead of writing it yourself

@@ -48,7 +48,7 @@ Parallel.For(0, 100, idx => {
 </code></pre>
 </div>
 
-<div style="float: right; width: 45%;">
+<div style="float: right; width: 53%;">
 <pre>
 <code class="cs">foreach (var item in list) {
     // op (not in parallel)
