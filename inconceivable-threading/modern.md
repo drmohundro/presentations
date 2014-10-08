@@ -139,8 +139,8 @@ Note:
 * Is the complexity removed? Yes, but not by a lot...
 
 Note:
-- See `git vdf master..port-to-async` for details
-- See also `git diff --stat master`
+- See `~/Dropbox/documents/from-laptop/Presentations` for details
+    - both diff stat and patch show amount of changes
 
 <..>
 
