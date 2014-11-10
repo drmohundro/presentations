@@ -22,7 +22,12 @@
     * Wait for all tasks passed in to complete
 * `Task.Factory.FromAsync`
     * Remember `IAsyncResult`? This can create a task from a `BeginInvoke`/`EndInvoke` pair (NICE)
-    * `Task<SqlDataReader>.Factory.FromAsync(command.BeginExecuteReader, command.EndExecuteReader, null);`
+
+```cs
+Task<SqlDataReader>.Factory.FromAsync(
+    command.BeginExecuteReader,
+    command.EndExecuteReader, null);
+```
 
 Note:
 - The *central* part of TPL

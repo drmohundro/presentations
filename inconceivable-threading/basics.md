@@ -65,7 +65,7 @@ Note:
       var thread = new System.Threading.Thread(DoWork);
       thread.Start();
 
-* All we did waw new up a `System.Threading.Thread` instance and pointed it to our work method
+* All we did was new up a `System.Threading.Thread` instance and pointed it to our work method
 * Disclaimer - this code breaks some rules... in fact, it breaks *the golden rule of threading*
    * Never update anything on the UI thread if you're not on the UI thread
 * Observations
@@ -186,7 +186,7 @@ Note:
    * There is a long story about the name
 * `Mutex`
    * "MUTually EXclusive"
-   * For cross process shared state (or IPC)
+   * For cross process shared state (or inter-process communication)
 * And more...
 
 Note:
