@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContinuationExample.App", "ContinuationExample.App\ContinuationExample.App.csproj", "{F162F829-BAED-453B-8732-41F4A28E0376}"
 EndProject
 Global

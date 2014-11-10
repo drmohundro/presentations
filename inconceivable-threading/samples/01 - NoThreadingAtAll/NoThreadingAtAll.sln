@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoThreadingAtAll.App", "NoThreadingAtAll.App\NoThreadingAtAll.App.csproj", "{442852E1-65D9-41F0-BF0B-24B0207D792E}"
 EndProject
 Global

@@ -5,9 +5,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ContinuationExample {
-    public partial class MainForm : Form {
-        public MainForm() {
+namespace ContinuationExample
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
             InitializeComponent();
 
             // initialize our async helper....
@@ -21,7 +24,8 @@ namespace ContinuationExample {
         /// Our really complicated, long running method
         /// </summary>
         /// <returns></returns>
-        private static int CalculateRandomNumber() {
+        private static int CalculateRandomNumber()
+        {
             var rnd = new Random();
             Thread.Sleep(500);
             return rnd.Next();
@@ -35,14 +39,16 @@ namespace ContinuationExample {
         /// <summary>
         /// This call will block the UI thread... it also shows off the C# yield statement
         /// </summary>
-        private void btnDoWorkNormal_Click(object sender, EventArgs e) {
+        private void btnDoWorkNormal_Click(object sender, EventArgs e)
+        {
             txtLog.Clear();
 
             var watch = new Stopwatch();
             watch.Start();
 
             // yield return is syntactic sugar for returning an enumerable - coroutine
-            foreach (var rnd in GetRandomNumbers(5)) {
+            foreach (var rnd in GetRandomNumbers(5))
+            {
                 Debug.WriteLine(rnd);
                 txtLog.AppendText(rnd.ToString() + Environment.NewLine);
             }
@@ -61,8 +67,10 @@ namespace ContinuationExample {
         /// 
         /// This is lazy evaluation works with LINQ (IQueryable)
         /// </summary>
-        private static IEnumerable<int> GetRandomNumbers(int numberOfRandomsToReturn) {
-            for (var i = 0; i < numberOfRandomsToReturn; i++) {
+        private static IEnumerable<int> GetRandomNumbers(int numberOfRandomsToReturn)
+        {
+            for (var i = 0; i < numberOfRandomsToReturn; i++)
+            {
                 Debug.WriteLine("before yield return");
                 yield return CalculateRandomNumber();
                 Debug.WriteLine("after yield return");
@@ -80,7 +88,8 @@ namespace ContinuationExample {
         /// <summary>
         /// This call will NOT block the UI thread.
         /// </summary>
-        private void btnDoWorkContinuation_Click(object sender, EventArgs e) {
+        private void btnDoWorkContinuation_Click(object sender, EventArgs e)
+        {
             txtLog.Clear();
 
             // manual enumerator
@@ -93,7 +102,8 @@ namespace ContinuationExample {
         /// <summary>
         /// Recursively call continuations... it doesn't care about threads or not
         /// </summary>
-        private static void ExecuteContinuation(IEnumerator<IResult> enumerator) {
+        private static void ExecuteContinuation(IEnumerator<IResult> enumerator)
+        {
             if (!enumerator.MoveNext()) return;
 
             var result = enumerator.Current;
@@ -113,11 +123,13 @@ namespace ContinuationExample {
         /// See AsyncResult code + the calling code. This ideas was popularized in .NET by the Caliburn
         /// library (which Deployer uses).
         /// </summary>
-        private IEnumerable<IResult> GetRandomNumbersContinuation(int numberOfRandomsToReturn) {
+        private IEnumerable<IResult> GetRandomNumbersContinuation(int numberOfRandomsToReturn)
+        {
             var watch = new Stopwatch();
             watch.Start();
 
-            for (var i = 0; i < numberOfRandomsToReturn; i++) {
+            for (var i = 0; i < numberOfRandomsToReturn; i++)
+            {
                 yield return new AsyncResult<int>(
                     CalculateRandomNumber,
                     x => txtLog.AppendText(x.ToString() + Environment.NewLine),
@@ -137,7 +149,8 @@ namespace ContinuationExample {
         /// <summary>
         /// C# does this for us natively now. Awesome.
         /// </summary>
-        private async void btnDoWorkAsync_Click(object sender, EventArgs e) {
+        private async void btnDoWorkAsync_Click(object sender, EventArgs e)
+        {
             txtLog.Clear();
             await GetRandomNumbersAsync(5);
         }
@@ -148,11 +161,13 @@ namespace ContinuationExample {
         /// 
         /// Can you see how these are basically doing the same thing?
         /// </summary>
-        private async Task GetRandomNumbersAsync(int numberOfRandomsToReturn) {
+        private async Task GetRandomNumbersAsync(int numberOfRandomsToReturn)
+        {
             var watch = new Stopwatch();
             watch.Start();
 
-            for (var i = 0; i < numberOfRandomsToReturn; i++) {
+            for (var i = 0; i < numberOfRandomsToReturn; i++)
+            {
                 var result = await Task.Run(() => CalculateRandomNumber());
 
                 txtLog.AppendText(result.ToString() + Environment.NewLine);
