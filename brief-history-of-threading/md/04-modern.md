@@ -134,21 +134,6 @@ Note:
 
 <..>
 
-## Example 09: Deployer - Async Port
-
-* Things to note
-    * .NET 4.5
-    * Lots of boilerplate async code was removed (Framework\Async.cs)
-    * Async, await, task are everywhere now
-* It is cleaner? Yes, definitely
-* Is the complexity removed? Yes, but not by a lot...
-
-Note:
-- See `~/Dropbox/documents/from-laptop/Presentations` for details
-    - both diff stat and patch show amount of changes
-
-<..>
-
 ## Async/Await Gotchas
 
 ![Shoving Computer](/images/shove-computer.gif)
@@ -165,6 +150,8 @@ Note:
     * See WCF calls
 
 Note:
+- See `~/Dropbox/documents/from-laptop/Presentations` for details
+    - both diff stat and patch show amount of changes
 - As an example of a LINQ statement not supported... you cannot use await with a SelectMany because there are multiple items being enumerated
 - An alternative to throwing Tasks all over your WCF code is to just instead let Visual Studio (i.e. svcutil) generate your proxies for you
     - It has async support... we historically have always coded our own WCF proxies, but this would be a reason to consider changing

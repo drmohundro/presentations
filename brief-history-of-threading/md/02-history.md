@@ -12,7 +12,6 @@
     <ul>
         <li>1965</li>
         <li>Number of transistors on integrated circuits doubles approximately every two years</li>
-        <li>Doesn't have to mean clock speed... but I used to think so</li>
     </ul>
 </div>
 
@@ -23,6 +22,7 @@
 Note:
 - This is not a "natural law" - it was just worded this way and has held true
 - Actually was changed to every 18 months for a period
+- Doesn't have to mean clock speed... but I used to think so
 - Regarding clock speed
     - In other words... 286, 386, 486, 233MHz, 500MHz, 1GHz, 2GHz, 3GHz... (between 1980 and 2000)
     - But now... my CPU is 2.40 GHz... but has 8 cores
@@ -80,10 +80,6 @@ Note:
     - Linux 2.6.23+, on the other hand, uses the Completely Fair Scheduler (CFS)
 
 Note:
-- Without a scheduler, they run only one thing at a time
-    - Remember DOS?
-    - You sat at C: and typed in a program... then it ran that program.
-    - It ran it until you exited out back to DOS
 - Non-preemptive schedulers don’t interrupt tasks
     - This means that, when the OS gives you control... you can KEEP IT FOREVER!
     - Remember how, when a program hung and the background would just wipe? That's because you still had control and your program hadn’t yielded control back so that the OS could redraw the background
@@ -140,11 +136,6 @@ Note:
 
 <div style="float: left; width: 45%;">
    <ul>
-      <li>Kernel threads vs user threads</li>
-      <ul>
-         <li>Distinction is who schedules them
-         <li>Managed threads are a hybrid</li>
-      </ul>
       <li><em>Every</em> process has <em>at least</em> one thread</li>
       <li>Process memory is shared between threads</li>
       <ul>
@@ -163,32 +154,13 @@ Note:
 
 <..>
 
-## Fiber
-
-- "Lightweight thread"
-- Fibers have to yield control back when they're done
-- This means that fibers cannot be truly multiprocessor, though, because two fibers cannot run at the same time
-- Process memory is shared *but is not accessed at the same time*
-
-Note:
-- No screenshot because I have no idea which Windows processes even use fibers
-- This slide is more for informational purposes... you'll see fibers show up more in non-Windows environments (e.g. Rails can use fiber-based parallelism)
-
-- It is theoretically possible to implement a CLR host that can manage threading entirely on its own
-   - SQL Server Yukon (2005) wanted to use fibers for its threads in its CLR host (i.e. SQLCLR) instead of full threads
-   - In response, the CLR team tried to add fiber support in Whidbey (.NET 2.0)
-
-> Eventually, mostly due to schedule pressure and a long stress bug tail related to fiber-mode, we threw up our hands and declared it unsupported." (via http://joeduffyblog.com/2006/11/09/fibers-and-the-clr/)
-
-<..>
-
 ## So, I'm a .NET developer... do I care about this?
 
 ![Don't Care](/images/dont-care.gif)
 
 <..>
 
-## You SHOULD care
+## Well sure you should care
 
 * It helps you understand why you shouldn't believe that adding threads makes your application faster
    * It *can* make it faster, but only in specific scenarios
@@ -217,12 +189,16 @@ You said... (discuss)
 * Computational intensive processing that doesn't depend on the output of other steps
 * Retrieving data from multiple services in parallel
 
+![Parallel](/images/parallel-traffic.gif)
+
 <..>
 
 ## Removing Blocking
 
 * Not blocking the UI or web thread
 * Blocking usually means blocking I/O (database, network, file, etc.)
+
+![Parallel](/images/non-blocking-assembly-line.gif)
 
 <..>
 
