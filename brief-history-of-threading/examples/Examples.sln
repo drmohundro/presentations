@@ -1,0 +1,90 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoThreadingAtAll.App", "01 - NoThreadingAtAll\NoThreadingAtAll.App\NoThreadingAtAll.App.csproj", "{442852E1-65D9-41F0-BF0B-24B0207D792E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - NoThreadingAtAll", "01 - NoThreadingAtAll", "{EFFD2687-7431-41AA-9456-A6ADB0F44CBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Thread", "02 - Thread", "{E8EB9CE5-F49F-4203-8A9C-CBBBCCF638EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 - BackgroundWorker", "03 - BackgroundWorker", "{CDEC7CEF-6D5E-43A4-90FF-BE6EF76B3883}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddSingleThread.App", "02 - AddSingleThread\AddSingleThread.App\AddSingleThread.App.csproj", "{22285F88-9E55-4414-AFCD-E7EC1FB406C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundWorker.App", "03 - BackgroundWorker\BackgroundWorker.App\BackgroundWorker.App.csproj", "{15322647-4D55-4825-98CA-8DC39D800774}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - ThreadPool", "04 - ThreadPool", "{5DE9CD97-6723-4A6A-AB93-EA28B1326455}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - IAsyncResult", "05 - IAsyncResult", "{16589ABE-B317-40E8-B38D-7C11D8DC8EB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 - Why IAsyncResult versus", "06 - Why IAsyncResult versus", "{66163AEB-2427-4FF8-9A84-151230A58488}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - Parallel Loops", "07 - Parallel Loops", "{A4AD082B-5AD9-4959-956C-CDADEDB9AA0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 - Async Await", "08 - Async Await", "{E5EE530D-853D-4B66-A85B-1F3E6570AF40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPooling.App", "04 - ThreadPooling\ThreadPooling.App\ThreadPooling.App.csproj", "{B2EA2E59-E3F9-44DD-ABA1-FCE1F769CA9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAsyncResultExample.App", "05 - IAsyncResultExample\IAsyncResultExample.App\IAsyncResultExample.App.csproj", "{C7F7BBE0-0200-435A-BD03-D685BC2129E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourceDownloader.Lib", "06 - Why IAsyncResult versus\ResourceDownloader.Lib\ResourceDownloader.Lib.csproj", "{401F200D-F374-4D57-8CE7-C60CD27C7B48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncFileLoading.App", "07 - SharedStateAndParallelism\AsyncFileLoading.App\AsyncFileLoading.App.csproj", "{C485D78D-8169-4375-A6AB-F57BE9F0E6B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContinuationExample.App", "08 - ContinuationExample\ContinuationExample.App\ContinuationExample.App.csproj", "{F162F829-BAED-453B-8732-41F4A28E0376}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{442852E1-65D9-41F0-BF0B-24B0207D792E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{442852E1-65D9-41F0-BF0B-24B0207D792E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{442852E1-65D9-41F0-BF0B-24B0207D792E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{442852E1-65D9-41F0-BF0B-24B0207D792E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22285F88-9E55-4414-AFCD-E7EC1FB406C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22285F88-9E55-4414-AFCD-E7EC1FB406C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22285F88-9E55-4414-AFCD-E7EC1FB406C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22285F88-9E55-4414-AFCD-E7EC1FB406C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15322647-4D55-4825-98CA-8DC39D800774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15322647-4D55-4825-98CA-8DC39D800774}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15322647-4D55-4825-98CA-8DC39D800774}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15322647-4D55-4825-98CA-8DC39D800774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2EA2E59-E3F9-44DD-ABA1-FCE1F769CA9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2EA2E59-E3F9-44DD-ABA1-FCE1F769CA9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2EA2E59-E3F9-44DD-ABA1-FCE1F769CA9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2EA2E59-E3F9-44DD-ABA1-FCE1F769CA9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7F7BBE0-0200-435A-BD03-D685BC2129E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7F7BBE0-0200-435A-BD03-D685BC2129E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7F7BBE0-0200-435A-BD03-D685BC2129E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7F7BBE0-0200-435A-BD03-D685BC2129E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{401F200D-F374-4D57-8CE7-C60CD27C7B48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{401F200D-F374-4D57-8CE7-C60CD27C7B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{401F200D-F374-4D57-8CE7-C60CD27C7B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{401F200D-F374-4D57-8CE7-C60CD27C7B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C485D78D-8169-4375-A6AB-F57BE9F0E6B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C485D78D-8169-4375-A6AB-F57BE9F0E6B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C485D78D-8169-4375-A6AB-F57BE9F0E6B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C485D78D-8169-4375-A6AB-F57BE9F0E6B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F162F829-BAED-453B-8732-41F4A28E0376}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F162F829-BAED-453B-8732-41F4A28E0376}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F162F829-BAED-453B-8732-41F4A28E0376}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F162F829-BAED-453B-8732-41F4A28E0376}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{442852E1-65D9-41F0-BF0B-24B0207D792E} = {EFFD2687-7431-41AA-9456-A6ADB0F44CBE}
+		{22285F88-9E55-4414-AFCD-E7EC1FB406C0} = {E8EB9CE5-F49F-4203-8A9C-CBBBCCF638EC}
+		{15322647-4D55-4825-98CA-8DC39D800774} = {CDEC7CEF-6D5E-43A4-90FF-BE6EF76B3883}
+		{B2EA2E59-E3F9-44DD-ABA1-FCE1F769CA9D} = {5DE9CD97-6723-4A6A-AB93-EA28B1326455}
+		{C7F7BBE0-0200-435A-BD03-D685BC2129E3} = {16589ABE-B317-40E8-B38D-7C11D8DC8EB1}
+		{401F200D-F374-4D57-8CE7-C60CD27C7B48} = {66163AEB-2427-4FF8-9A84-151230A58488}
+		{C485D78D-8169-4375-A6AB-F57BE9F0E6B6} = {A4AD082B-5AD9-4959-956C-CDADEDB9AA0F}
+		{F162F829-BAED-453B-8732-41F4A28E0376} = {E5EE530D-853D-4B66-A85B-1F3E6570AF40}
+	EndGlobalSection
+EndGlobal
