@@ -38,12 +38,12 @@ namespace ContinuationExample
 
             // update UI with results
             txtLog.AppendText($"Process Payment Results: {chargeResults}{Environment.NewLine}");
+            statusLabel.Text = "Saving to database...";
 
             // call database with results from API
             var dbResults = SlowDatabase.LogCharge(chargeResults);
             
             // update UI
-            statusLabel.Text = "Saving to database...";
             txtLog.AppendText($"Database Results: {dbResults}{Environment.NewLine}");
 
             statusLabel.Text = "DONE!";
@@ -79,6 +79,9 @@ namespace ContinuationExample
                     {
                         // update UI with results
                         txtLog.AppendText($"Process Payment Results: {chargeResults}{Environment.NewLine}");
+
+			// let user know we're working
+                        statusLabel.Text = "Saving to database...";
                     });
 
                     // call database with results from API
@@ -92,7 +95,6 @@ namespace ContinuationExample
                     AsyncHelper.BeginOnUIThread(() =>
                     {
                         // update UI
-                        statusLabel.Text = "Saving to database...";
                         txtLog.AppendText($"Database Results: {dbResults}{Environment.NewLine}");
 
                         statusLabel.Text = "DONE!";
@@ -169,6 +171,9 @@ namespace ContinuationExample
             // update UI with results
             txtLog.AppendText($"Process Payment Results: {chargeResults}{Environment.NewLine}");
 
+            // let user know we're working...
+            statusLabel.Text = "Saving to database...";
+
             string dbResults = null;
 
             // call database with results from API
@@ -178,7 +183,6 @@ namespace ContinuationExample
                 errorCallback: ex => MessageBox.Show(ex.ToString()));
             
             // update UI
-            statusLabel.Text = "Saving to database...";
             txtLog.AppendText($"Database Results: {dbResults}{Environment.NewLine}");
 
             statusLabel.Text = "DONE!";
@@ -226,11 +230,13 @@ namespace ContinuationExample
             // update UI with results
             txtLog.AppendText($"Process Payment Results: {chargeResults}{Environment.NewLine}");
 
+            // let user know we're saving to the database
+            statusLabel.Text = "Saving to database...";
+
             // call database with results from API
             var dbResults = await Task.Run(() => SlowDatabase.LogCharge(chargeResults));
             
-            // update UI
-            statusLabel.Text = "Saving to database...";
+            // update UI with results
             txtLog.AppendText($"Database Results: {dbResults}{Environment.NewLine}");
 
             statusLabel.Text = "DONE!";
