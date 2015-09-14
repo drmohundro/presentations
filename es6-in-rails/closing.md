@@ -38,7 +38,7 @@ David Mohundro
 
 [Presentation is available on Github](https://github.com/drmohundro/presentations)
 
-![Gasp!](https://camo.githubusercontent.com/64d664a7f850bcf51b2cdeece971a2709dbb31d4/687474703a2f2f6769667365632e636f6d2f77702d636f6e74656e742f75706c6f6164732f4749462f323031342f30332f4f4d472d4749465f322e676966)
+![Gasp!](images/space-cat.gif)
 
 Note:
 * that image was used on a [BabelJS change log](https://github.com/babel/babel/blob/master/CHANGELOG.md) because it can compile itself now... awesome.
