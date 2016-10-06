@@ -6,7 +6,7 @@
 
 <..>
 
-## Task Parellel Library
+## Task Parallel Library
 
 * AKA Parallel Extensions AKA PFX AKA TPL...
 * Built by Microsoft Research and CTPs were available as early as 2007 for .NET 3.5
@@ -185,7 +185,7 @@ Note:
 So, you've got the following:
 
 <pre><code class="cs">foreach (var category in categories) {
-	await category.GetStatusAsync();
+  await category.GetStatusAsync();
 }</code></pre>
 </div>
 
@@ -193,7 +193,7 @@ So, you've got the following:
 Let's refactor to this!
 
 <pre><code class="cs">Parallel.ForEach(categories, cat => {
-	await category.GetStatusAsync();
+  await category.GetStatusAsync();
 }</code></pre>
 </div>
 
