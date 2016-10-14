@@ -8,16 +8,9 @@
 
 ## Example 01: No (Additional) Threading
 
-<div style="float: left; width: 45%;">
-   <ul>
-      <li>Do you find it surprising that there are still 4 threads?</li>
-      <li>What are they?</li>
-   </ul>
-</div>
+![No Threading](/images/basics-01.png) <!-- .element width="60%" -->
 
-<div style="float: right; width: 45%;">
-![No Threading](/images/basics-01.png)
-</div>
+(wait... why are there four threads???)
 
 Note:
 - The starting addresses give us a few hints
@@ -30,20 +23,22 @@ Note:
 
 ## Example 02: Single Thread (The Wrong Way)
 
-      var thread = new System.Threading.Thread(DoWork);
-      thread.Start();
+```cs
+var thread = new System.Threading.Thread(DoWork);
+thread.Start();
+```
 
-* All we did was new up a `System.Threading.Thread` instance and pointed it to our work method
-* Disclaimer - this code breaks some rules... in fact, it breaks *the golden rule of threading*
-   * Never update anything on the UI thread if you're not on the UI thread
+* Disclaimer - this code breaks some rules... in fact, it breaks *the golden rule of threading*...
 
 <..>
 
 ## Example 02: Fix the GUI Thread
 
-      BeginInvoke(new Action<object>(x => {
-         txtCount.Text = x.ToString();
-      }), i);
+```cs
+BeginInvoke(new Action<object>(x => {
+   txtCount.Text = x.ToString();
+}), i);
+```
 
 * In WinForms, you use `Control.Invoke` or `Control.BeginInvoke`
 * In WPF, you use `Dispatcher.Invoke` or `Dispatcher.BeginInvoke`
@@ -57,19 +52,21 @@ Note:
 
 ## Example 03: BackgroundWorker
 
-      using (var worker = new System.ComponentModel.BackgroundWorker()) {
-         worker.WorkerReportsProgress = true;
+```cs
+using (var worker = new System.ComponentModel.BackgroundWorker()) {
+   worker.WorkerReportsProgress = true;
 
-         worker.DoWork += DoWork;
-         worker.ProgressChanged += (o, args) => {
-            txtCount.Text = args.UserState.ToString();
-         };
-         worker.RunWorkerCompleted += (o, args) => {
-            txtTotalTime.Text = args.Result.ToString();
-         };
+   worker.DoWork += DoWork;
+   worker.ProgressChanged += (o, args) => {
+      txtCount.Text = args.UserState.ToString();
+   };
+   worker.RunWorkerCompleted += (o, args) => {
+      txtTotalTime.Text = args.Result.ToString();
+   };
 
-         worker.RunWorkerAsync();
-      }
+   worker.RunWorkerAsync();
+}
+```
 
 <..>
 
@@ -86,7 +83,9 @@ Note:
 
 ## Example 04: ThreadPool Threads
 
-      ThreadPool.QueueUserWorkItem(DoWork);
+```cs
+ThreadPool.QueueUserWorkItem(DoWork);
+```
 
 * Thread construction is expensive
    * They're good for long running background tasks, but if you're doing lots of small tasks, use a `ThreadPool` thread instead
@@ -107,7 +106,7 @@ Note:
    * Tasks (we're not there yet) are ThreadPool threads…
 * `Thread`
    * Long running request
-   * You need more control over thread details (i.e. priority, identity, etc.)
+   * You need more control over thread details (e.g. priority, identity, etc.)
 
 Note:
 - Not even taking into account Tasks and the TPL right now… but those are ThreadPool threads
@@ -116,10 +115,12 @@ Note:
 
 ## Example 05: IAsyncResult
 
-      var iar = dlg.BeginInvoke(
-         arg,
-         Callback,
-         new Tuple<Func<int, int>, int>(dlg, arg));
+```cs
+var iar = dlg.BeginInvoke(
+   arg,
+   Callback,
+   new Tuple<Func<int, int>, int>(dlg, arg));
+```
 
 * Sometimes called the [Asynchronous Programming Model \(APM\)](http://msdn.microsoft.com/en-us/library/ms228963.aspx)
 * Most of the time you consume APM instead of writing it yourself

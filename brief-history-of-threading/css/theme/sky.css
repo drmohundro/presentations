@@ -53,7 +53,6 @@ body {
   line-height: 1.2;
   letter-spacing: -0.08em;
   text-transform: uppercase;
-  text-shadow: none;
   word-wrap: break-word; }
 
 .reveal h1 {
@@ -67,9 +66,6 @@ body {
 
 .reveal h4 {
   font-size: 1em; }
-
-.reveal h1 {
-  text-shadow: none; }
 
 /*********************************************
  * OTHER

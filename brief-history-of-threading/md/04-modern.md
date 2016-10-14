@@ -1,6 +1,9 @@
 # Modern Threading
 
-![Modern](/images/modern.gif)
+<!-- .slide: data-background-image="/images/modern.gif" -->
+<!-- .slide: class="shadowed-text" -->
+
+<!--![Modern](/images/modern.gif)-->
 
 (.NET 3.5-...)
 
@@ -72,7 +75,7 @@ Note:
     - You might want to just add a lock and gather results in each thread, but you would be locking more than necessary
     - Instead, TPL keeps a threadlocal storage where you can gather results for each thread independently and a another callback where you can gather those results
 - Supports partitioning
-    - If you need more finegrained control over calls... if you know the number of results you have and the size of the data involved, you can break the work up and have control over how the TPL breaks up tasks
+    - If you need more fine-grained control over calls... if you know the number of results you have and the size of the data involved, you can break the work up and have control over how the TPL breaks up tasks
 
 <..>
 
@@ -80,7 +83,7 @@ Note:
 
 <div style="float: left; width: 45%;">
 <pre>
-<code class="cs">(from x in someResults
+<code data-noescape data-trim class="cs">(from x in someResults
  where x % 2 == 0
  select x).
 Aggregate((x, y) => x + y);
@@ -89,10 +92,10 @@ Aggregate((x, y) => x + y);
 
 <div style="float: right; width: 45%;" class="fragment">
 <pre>
-<code class="cs">(from x in someResults
+<code data-noescape data-trim class="cs">(from x in someResults
  where x % 2 == 0
  select x).
-AsParallel().
+<mark>AsParallel().</mark>
 Aggregate((x, y) => x + y);
 </code></pre>
 </div>
@@ -116,7 +119,7 @@ Note:
 ![Prettified Decompiled Code](/images/async-01.png)
 </div>
 
-<div style="float: right; width: 45%;">
+<div style="float: right; width: 55%;">
 ![Straight Decompiled Code](/images/async-02.png)
 </div>
 
@@ -134,9 +137,16 @@ Note:
 
 <..>
 
+## Example 09: What about .NET Core???
+
+<..>
+
 ## Async/Await Gotchas
 
-![Shoving Computer](/images/shove-computer.gif)
+<!-- .slide: data-background-image="/images/dumb-and-dumber-sad.gif" -->
+<!-- .slide: class="shadowed-text" -->
+
+<!-- ![Shoving Computer](/images/fail-door-prank.gif) -->
 
 <..>
 
@@ -192,7 +202,7 @@ So, you've got the following:
 <div class="fragment">
 Let's refactor to this!
 
-<pre><code class="cs">Parallel.ForEach(categories, cat => {
+<pre><code class="cs">Parallel.ForEach(categories, category => {
   await category.GetStatusAsync();
 }</code></pre>
 </div>

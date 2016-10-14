@@ -24,6 +24,16 @@
       link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
+
+    <style>
+      .cf-watermark {
+        position: fixed;
+        width: 300px;
+        z-index: 30;
+        left: 25px;
+        bottom: 25px;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
@@ -34,6 +44,10 @@
         <section data-markdown="./md/04-modern.md" data-separator="^<-->" data-separator-vertical="^<..>"></section>
         <section data-markdown="./md/05-closing.md" data-separator="^<-->" data-separator-vertical="^<..>"></section>
       </div>
+
+      <aside class="cf-watermark">
+        <img src="/images/clear-function-logo-white.svg" alt="Clear Function" />
+      </aside>
     </div>
 
     <script src="lib/js/head.min.js"></script>
@@ -49,7 +63,7 @@
           { src: 'plugin/markdown/marked.js' },
           { src: 'plugin/markdown/markdown.js' },
           { src: 'plugin/notes/notes.js', async: true },
-		  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
       });
     </script>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="Layer_1" style="enable-background:new 0 0 399.1 56.8;" x="0px" y="0px" viewBox="0 0 399.1 56.8" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+    .st0{opacity:0.75;}
+    .st1{fill:#FFFFFF;}
+  </style>
+  <g class="st0">
+    <circle class="st1" cx="18.4" cy="8.7" r="8.6" style="fill: rgb(2, 120, 185);"/>
+    <circle class="st1" cx="8.6" cy="28.2" r="8.6" style="fill: rgb(2, 120, 185);"/>
+    <circle class="st1" cx="18.4" cy="47.7" r="8.6" style="fill: rgb(2, 120, 185);"/>
+    <circle class="st1" cx="37.9" cy="47.7" r="8.6" style="fill: rgb(2, 120, 185);"/>
+    <circle class="st1" cx="37.9" cy="8.7" r="8.6" style="fill: rgb(2, 120, 185);"/>
+  </g>
+  <g>
+    <circle class="st1" cx="58.3" cy="8.7" r="8.6" style="fill: rgb(25, 173, 222);"/>
+    <circle class="st1" cx="58.3" cy="28.2" r="8.6" style="fill: rgb(25, 173, 222);"/>
+    <circle class="st1" cx="77.8" cy="8.7" r="8.6" style="fill: rgb(25, 173, 222);"/>
+    <circle class="st1" cx="97.3" cy="8.7" r="8.6" style="fill: rgb(25, 173, 222);"/>
+    <circle class="st1" cx="77.8" cy="28.2" r="8.6" style="fill: rgb(25, 173, 222);"/>
+    <circle class="st1" cx="58.3" cy="47.7" r="8.6" style="fill: rgb(25, 173, 222);"/>
+  </g>
+</svg>

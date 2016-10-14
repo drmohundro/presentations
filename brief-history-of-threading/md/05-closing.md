@@ -1,6 +1,7 @@
 # Closing
 
-![Closing](/images/closing.gif)
+<!-- .slide: data-background-image="/images/closing.gif" -->
+<!-- .slide: class="shadowed-text" -->
 
 <..>
 

@@ -1,6 +1,7 @@
 # Prehistory
 
-![History](/images/history.gif)
+<!-- .slide: data-background-image="/images/history.gif" -->
+<!-- .slide: class="shadowed-text" -->
 
 (before .NET)
 
@@ -8,14 +9,14 @@
 
 ## Quick Review... Moore's Law
 
-<div style="float: left; width: 45%;">
+<div style="float: left; width: 35%;">
     <ul>
         <li>1965</li>
         <li>Number of transistors on integrated circuits doubles approximately every two years</li>
     </ul>
 </div>
 
-<div style="float: right; width: 45%;">
+<div style="float: right; width: 65%;">
 ![Moore's Law](/images/moores-law.png)
 </div>
 
@@ -82,7 +83,7 @@ Note:
 Note:
 - Non-preemptive schedulers don’t interrupt tasks
     - This means that, when the OS gives you control... you can KEEP IT FOREVER!
-    - Remember how, when a program hung and the background would just wipe? That's because you still had control and your program hadn’t yielded control back so that the OS could redraw the background
+    - Remember how, when a program hung and the background would just wipe? That's because you still had control and your program hadn't yielded control back so that the OS could redraw the background
     - I tried finding a good image, but failed
 - Multilevel feedback queues use a queuing mechanism to determine priority and which process needs the most time
 
@@ -93,7 +94,7 @@ Note:
 What Windows uses today (and almost every other modern OS)
 
 ![Windows](/images/windows-multilevel-feedback-queue.png) <!-- .element: style="float: left; width: 45%;" -->
-![OSX](/images/osx-multilevel-feedback-queue.png) <!-- .element: style="float: right; width: 45%;" -->
+![OSX](/images/osx-multilevel-feedback-queue.png) <!-- .element: style="float: right; width: 53%;" -->
 
 Note:
 - Basically, it is a smart scheduler that will interrupt your tasks, but it also has a priority queue so that more important processes get preference
@@ -154,9 +155,9 @@ Note:
 
 <..>
 
-## So, I'm a .NET developer... do I care about this?
+## So, should I really care?
 
-![Don't Care](/images/dont-care.gif)
+![Don't Care](/images/man-not-caring.gif)
 
 <..>
 
@@ -164,7 +165,6 @@ Note:
 
 * It helps you understand why you shouldn't believe that adding threads makes your application faster
    * It *can* make it faster, but only in specific scenarios
-* Moore's law is changing which means our programming practices need to change, too
 
 <-->
 
