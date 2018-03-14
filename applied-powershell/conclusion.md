@@ -8,7 +8,7 @@ Remote PowerShell (like SSH), Jobs, Transactions, etc.
 
 But... we don't have time.
 
-![Time](/images/back-to-the-future-machine.jpg)
+![Time](./images/back-to-the-future-machine.jpg)
 
 <aside class="notes" data-markdown>
 * gave a powershell talk back in 2008 a few times

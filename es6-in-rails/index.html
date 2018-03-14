@@ -14,18 +14,18 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="/vendor/revealjs/css/reveal.css">
+    <link rel="stylesheet" href="/vendor/revealjs/css/theme/black.css" id="theme">
 
     <!-- For syntax highlighting -->
-    <link rel="stylesheet" href="lib/css/monokai.css">
+    <link rel="stylesheet" href="/vendor/revealjs/lib/css/monokai.css">
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/vendor/revealjs/css/print/pdf.css' : '/vendor/revealjs/css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
 
@@ -53,32 +53,22 @@
 
     </div>
 
-    <script src="lib/js/head.min.js"></script>
-    <script src="js/reveal.js"></script>
+    <script src="/vendor/revealjs/lib/js/head.min.js"></script>
+    <script src="/vendor/revealjs/js/reveal.js"></script>
 
     <script>
-
-      // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // More info https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
-        controls: true,
-        progress: true,
         history: true,
-        center: true,
 
-        transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-        // Optional reveal.js plugins
+        // More info https://github.com/hakimel/reveal.js#dependencies
         dependencies: [
-          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-          { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true }
+          { src: '/vendor/revealjs/plugin/markdown/marked.js' },
+          { src: '/vendor/revealjs/plugin/markdown/markdown.js' },
+          { src: '/vendor/revealjs/plugin/notes/notes.js', async: true },
+          { src: '/vendor/revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
         ]
       });
-
     </script>
 
   </body>

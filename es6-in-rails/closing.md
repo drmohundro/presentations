@@ -11,8 +11,8 @@ Maybe.
 Existential checks still stink...
 
 ```javascript
-if (typeof x !== 'undefined') {
-	// this is still gross
+if (typeof x !== "undefined") {
+  // this is still gross
 }
 ```
 
@@ -38,7 +38,8 @@ David Mohundro
 
 [Presentation is available on Github](https://github.com/drmohundro/presentations)
 
-![Gasp!](images/space-cat.gif)
+![Gasp!](./images/space-cat.gif)
 
 Note:
+
 * that image was used on a [BabelJS change log](https://github.com/babel/babel/blob/master/CHANGELOG.md) because it can compile itself now... awesome.

@@ -1,6 +1,6 @@
 # Basic Threading
 
-![Basics](/images/hello-computer.gif)
+![Basics](./images/hello-computer.gif)
 
 (.NET 1.0-2.0)
 
@@ -8,16 +8,17 @@
 
 ## Example 01: No (Additional) Threading
 
-![No Threading](/images/basics-01.png) <!-- .element width="60%" -->
+![No Threading](./images/basics-01.png) <!-- .element width="60%" -->
 
 (wait... why are there four threads???)
 
 Note:
-- The starting addresses give us a few hints
-    - For example, gdiplus.dll is related to GDI+ (graphics)
-    - mscorwks.dll is one of the core CLR assemblies
-    - And of course there is our assembly
-- But... VS2012 has some really nice threading tools
+
+* The starting addresses give us a few hints
+  * For example, gdiplus.dll is related to GDI+ (graphics)
+  * mscorwks.dll is one of the core CLR assemblies
+  * And of course there is our assembly
+* But... VS2012 has some really nice threading tools
 
 <..>
 
@@ -28,7 +29,7 @@ var thread = new System.Threading.Thread(DoWork);
 thread.Start();
 ```
 
-* Disclaimer - this code breaks some rules... in fact, it breaks *the golden rule of threading*...
+* Disclaimer - this code breaks some rules... in fact, it breaks _the golden rule of threading_...
 
 <..>
 
@@ -45,8 +46,9 @@ BeginInvoke(new Action<object>(x => {
 * In addition, see `SynchronizationContext.Current` and use `Send` or `Post`
 
 Note:
-- `Invoke` executes on the UI thread, but waits for completion before continuing (can prevent shared state issues)
-- `BeginInvoke` executes on the UI thread, but doesn't wait for completion before continuing (fire and forget... sort of)
+
+* `Invoke` executes on the UI thread, but waits for completion before continuing (can prevent shared state issues)
+* `BeginInvoke` executes on the UI thread, but doesn't wait for completion before continuing (fire and forget... sort of)
 
 <..>
 
@@ -73,11 +75,11 @@ using (var worker = new System.ComponentModel.BackgroundWorker()) {
 ## Example 03: BackgroundWorker
 
 * Introduced in .NET 2.0 because threading is hard
-   * And because everyone was updating the UI thread from the background thread
+  * And because everyone was updating the UI thread from the background thread
 * It falls in the easy category because...
-   * It wasn't written by the threading team, but instead by the WinForms team (even lives under the `System.ComponentModel` namespace)
-   * It can be dropped on your design surface
-   * It automatically marshals calls back to the UI thread for you (via its events)
+  * It wasn't written by the threading team, but instead by the WinForms team (even lives under the `System.ComponentModel` namespace)
+  * It can be dropped on your design surface
+  * It automatically marshals calls back to the UI thread for you (via its events)
 
 <..>
 
@@ -88,28 +90,29 @@ ThreadPool.QueueUserWorkItem(DoWork);
 ```
 
 * Thread construction is expensive
-   * They're good for long running background tasks, but if you're doing lots of small tasks, use a `ThreadPool` thread instead
+  * They're good for long running background tasks, but if you're doing lots of small tasks, use a `ThreadPool` thread instead
 * The CLR provides a "pool of threads" for you that are all ready to go
-   * ASP.NET uses the ThreadPool for all of its requests
-   * WCF uses the ThreadPool
-   * And so on
+  * ASP.NET uses the ThreadPool for all of its requests
+  * WCF uses the ThreadPool
+  * And so on
 
 <..>
 
 ## Quick aside... when should I use which?
 
 * `BackgroundWorker`
-   * Only use this if you're in WinForms or WPF or another GUI technology
+  * Only use this if you're in WinForms or WPF or another GUI technology
 * `ThreadPool`
-   * Efficiency
-   * Default to using this
-   * Tasks (we're not there yet) are ThreadPool threads…
+  * Efficiency
+  * Default to using this
+  * Tasks (we're not there yet) are ThreadPool threads…
 * `Thread`
-   * Long running request
-   * You need more control over thread details (e.g. priority, identity, etc.)
+  * Long running request
+  * You need more control over thread details (e.g. priority, identity, etc.)
 
 Note:
-- Not even taking into account Tasks and the TPL right now… but those are ThreadPool threads
+
+* Not even taking into account Tasks and the TPL right now… but those are ThreadPool threads
 
 <..>
 
@@ -133,13 +136,13 @@ var iar = dlg.BeginInvoke(
 * So... why would I go through all of that complexity as compared to just using a ThreadPool thread on my own?
 * It has everything to do with having a blocking thread or not <!-- .element class="fragment" -->
 
-![Blocking](/images/shared-state-traffic.gif) <!-- .element class="fragment" -->
+![Blocking](./images/shared-state-traffic.gif) <!-- .element class="fragment" -->
 
 Note:
-- Initial version doesn't even pretend to use threading
-- Threaded version uses a thread... but still waits for the results
-In fact, with that version, we've got TWO blocking threads now instead of just one – it got WORSE
-- Final version is more complex, but the .NET Framework is trying to guide you down the right path
-    - Look at IAsyncHttpHandler versus the IHttpHandler
-    - See http://msdn.microsoft.com/en-us/library/system.web.ihttphandler(v=vs.110).aspx
 
+* Initial version doesn't even pretend to use threading
+* Threaded version uses a thread... but still waits for the results
+  In fact, with that version, we've got TWO blocking threads now instead of just one – it got WORSE
+* Final version is more complex, but the .NET Framework is trying to guide you down the right path
+  * Look at IAsyncHttpHandler versus the IHttpHandler
+  * See http://msdn.microsoft.com/en-us/library/system.web.ihttphandler(v=vs.110).aspx

@@ -6,7 +6,7 @@
 
 ### Absolutely!
 
-![Yes!](/images/yes.gif)
+![Yes!](./images/yes.gif)
 
 <..>
 
@@ -14,12 +14,16 @@
 
 Pull up the NuGet Console and run:
 
-    Install-Package System.Management.Automation
-    
+```powershell
+Install-Package System.Management.Automation
+```
+
 Alternatively, you can edit the `.csproj` file and add the following line:
 
-    <Reference Include="System.Management.Automation" />
-    
+```xml
+<Reference Include="System.Management.Automation" />
+```
+
 <aside class="notes" data-markdown>
 It can be a *huge* pain to track down the assembly... it doesn't show up in
 the GAC by default and the top-voted answer on StackOverflow says to install
@@ -31,16 +35,18 @@ computer!
 
 ### Calling PowerShell
 
-    using (var ps = PowerShell.Create()) {
-        ps.AddScript(@"Get-ChildItem c:\");
-        
-        var result = ps.Invoke();
-        
-        foreach (var r in result) {
-            Console.WriteLine(r);
-        }
+```csharp
+using (var ps = PowerShell.Create()) {
+    ps.AddScript(@"Get-ChildItem c:\");
+
+    var result = ps.Invoke();
+
+    foreach (var r in result) {
+        Console.WriteLine(r);
     }
-    
+}
+```
+
 <aside class="notes" data-markdown>
 * Recall that PowerShell is all objects... so you're dealing with objects here.
 * What do you think `result` is here?
@@ -61,6 +67,7 @@ computer!
               }
           }
       }
+
 </aside>
 
 <..>
@@ -70,4 +77,4 @@ computer!
 * Depending on what you need to do, some of the modules might be far easier to use than writing the C# yourself
   * Prior to using F5 hardware load balancers, we used the `NetworkLoadBalancingClusters` module
   * The `WebAdministration` module can provide a lot of IIS details
-* Certainly better than starting the PowerShell process because, at that point, you *are* dealing with strings
+* Certainly better than starting the PowerShell process because, at that point, you _are_ dealing with strings

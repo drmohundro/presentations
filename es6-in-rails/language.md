@@ -8,7 +8,7 @@ I thought it was called JavaScript...
 
 <..>
 
-![Transition](images/batman-spin.gif)
+![Transition](./images/batman-spin.gif)
 
 <..>
 
@@ -19,6 +19,7 @@ I thought it was called JavaScript...
 * June 1997, first edition of ECMA-262 (aka ECMAScript)
 
 Note:
+
 * See http://en.wikipedia.org/wiki/List_of_Ecma_standards for other ECMA standards, like floppy disk formats, CD-ROM volume and filestructure, C# language specification, JSON, Dart
 
 <..>
@@ -38,6 +39,7 @@ Note:
 * in progress, ES7!!!
 
 Note:
+
 * Lots and lots of politics... read the [Wikipedia post](http://en.wikipedia.org/wiki/ECMAScript) some time
 * It's moving again! And fast, too!
 
@@ -66,7 +68,7 @@ So, what's new?
 
 Let's take a look!
 
-```es6
+```javascript
 class Animal {
   constructor(name, age) {
     this.name = name;
@@ -82,13 +84,14 @@ class Animal {
   }
 }
 
-let x = new Animal('Fido', 3);
+let x = new Animal("Fido", 3);
 x.bark();
 console.log(x.age);
 console.log(x.ageInDogYears);
 ```
 
 Note:
+
 * we see classes, getters/setters, string interpolation, `let` keyword
 * thoughts? does it look familiar while still adding nice language features?
 
@@ -98,7 +101,7 @@ Side note... check out [Scratch JS](https://chrome.google.com/webstore/detail/sc
 
 <..>
 
-```es6
+```javascript
 function* generator() {
   let count = 0;
   const max = 10;
@@ -117,6 +120,7 @@ for (let x of generator()) {
 ```
 
 Note:
+
 * generators! (same idea as `yield` in ruby)
   * note the `*` - it is required to indicate that a function yields
 * constants
@@ -125,7 +129,7 @@ Note:
 <..>
 
 ```javascript
-[1,2,3,4,5,6,7,8,9,10].map(x => {
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(x => {
   if (x % 2 === 0) {
     console.log(x);
   }
@@ -133,6 +137,7 @@ Note:
 ```
 
 Note:
+
 * arrow functions! yay!!! (this retains outer scope here, too)
 * `===` still exists...
 

@@ -1,13 +1,14 @@
 ## So... what is this
+
 # PowerShell thing?
 
 <..>
 
-<blockquote>Windows PowerShell is Microsoft's task automation framework, consisting of a
-command-line shell and associated scripting language built on top of .NET
-Framework. PowerShell provides full access to COM and WMI, enabling
-administrators to perform administrative tasks on both local and remote Windows
-systems.</blockquote>
+> Windows PowerShell is Microsoft's task automation framework, consisting of a
+> command-line shell and associated scripting language built on top of .NET
+> Framework. PowerShell provides full access to COM and WMI, enabling
+> administrators to perform administrative tasks on both local and remote Windows
+> systems.
 
 via [wikipedia](http://en.wikipedia.org/wiki/Windows_PowerShell)
 
@@ -24,17 +25,20 @@ via [wikipedia](http://en.wikipedia.org/wiki/Windows_PowerShell)
 <..>
 
 ### Whoa... a command line?
+
 ## Do we even NEED another command line?
+
 ### Isn't cmd.exe enough?
 
 <..>
 
-![No. Just. No.](/images/absolutely-not.jpg)
+![No. Just. No.](./images/absolutely-not.jpg)
+
 ### Don't even say such nonsense.
 
 <..>
 
-<blockquote>We are digging ourselves out of a 30 year hole.</blockquote>
+> We are digging ourselves out of a 30 year hole.
 
 via [Jeffrey Snover's Lang.Net PowerShell Talk](http://blogs.msdn.com/powershell/archive/2009/04/17/15-minutes-with-lang-net.aspx)
 
@@ -48,6 +52,7 @@ via [Jeffrey Snover's Lang.Net PowerShell Talk](http://blogs.msdn.com/powershell
 <..>
 
 ### This has everything to do with Microsoft realizing that
+
 ## the GUI isn't always the right tool for the job
 
 <aside class="notes" data-markdown>
@@ -100,7 +105,7 @@ d----         3/22/2013   2:57 PM            sublime-projects
 
 <..>
 
-<pre><code><span># Changing directories
+<pre><code data-trim data-noescape class="powershell"><span># Changing directories
 cd c:\temp</span>
 
 <span class="fragment"># Getting directory contents
@@ -122,7 +127,7 @@ rmdir foo</span>
 
 <..>
 
-<pre><code><span># Searching all C# files for "console.writeline"
+<pre><code data-trim data-noescape class="powershell"><span># Searching all C# files for "console.writeline"
 Get-ChildItem -include *.cs -recurse | Select-String console.writeline</span>
 
 <span class="fragment"># Get all processes whose memory usage is over 125mb
@@ -153,7 +158,8 @@ Get-WmiObject CIM_PhysicalMemory |
 
 ## How about building reports?
 
-<pre><code>$prodServers = '...'
+```powershell
+$prodServers = '...'
 $prodServers |
   foreach { Get-Service -ComputerName $_ |
     where { $_.DisplayName -match '(SUE|ServiceU)' -or $_.Name -match '^Su\w+' }
@@ -169,7 +175,8 @@ $prodServers |
   }, Name, DisplayName |
   select -unique Role, Name, DisplayName |
   ConvertTo-Html |
-  Out-File .\WindowsServicesReport.html -Encoding ASCII</code></pre>
+  Out-File .\WindowsServicesReport.html -Encoding ASCII
+```
 
 <..>
 

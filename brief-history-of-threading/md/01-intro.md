@@ -1,6 +1,6 @@
 # Brief History of (.NET) Threading
 
-![Weird](/images/weird-intro.gif)
+![Weird](./images/weird-intro.gif)
 
 David Mohundro
 
@@ -13,7 +13,7 @@ David Mohundro
 I'm David Mohundro
 
 <div>
-	![Clear Function](/images/clear-function-logo-white-text.svg) <!-- .element: style="border: none; width: 280px; background-color: rgba(0,0,0,0); box-shadow: none" -->
+	![Clear Function](./images/clear-function-logo-white-text.svg) <!-- .element: style="border: none; width: 280px; background-color: rgba(0,0,0,0); box-shadow: none" -->
 </div>
 
 <..>
@@ -28,13 +28,4 @@ I'm David Mohundro
 
 ## But, Before We Start...
 
-![Loading](/images/loading.gif)
-
-<..>
-
-## Why Threading?
-
-### What Does It Solve?
-
-(discuss)
-
+![Loading](./images/loading.gif)
