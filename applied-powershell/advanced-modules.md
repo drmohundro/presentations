@@ -17,7 +17,7 @@ manifest modules.</blockquote>
 
 * Version 2 of Snap-ins
 * Used to share functionality that is bigger than a single script
-* Usually you won't *write* modules, you'll *use* them
+* Usually you won't _write_ modules, you'll _use_ them
 
 <aside class="notes" data-markdown>
 * if you've heard of PSSnapins, Modules are the "v2" of Snap-ins
@@ -29,16 +29,18 @@ manifest modules.</blockquote>
 
 ## Using Modules
 
-    # list available modules (there are quite a few)
-    Get-Module -ListAvailable
-    
-    # import a module
-    # note: as of v3, not usually needed*
-    Import-Module WebAdministration
-    
-    # use new and awesome module functionality
-    cd IIS:\Sites
-   
+```powershell
+# list available modules (there are quite a few)
+Get-Module -ListAvailable
+
+# import a module
+# note - as of v3, not usually needed*
+Import-Module WebAdministration
+
+# use new and awesome module functionality
+cd IIS:\Sites
+```
+
 <aside class="notes" data-markdown>
 * if you've heard of PSSnapins, Modules are the "v2" of Snap-ins
 * *mostly* used for sharing code that is bigger than a script
@@ -67,7 +69,9 @@ I've found that, when I have a good idea, someone has usually beat me to it.
 
 Check out [http://psget.net/](http://psget.net/)
 
-    # once installed, you can do things like this:
-    Import-Module Find-String
-    Import-Module posh-git
-    # etc.
+```powershell
+# once installed, you can do things like this:
+Import-Module Find-String
+Import-Module posh-git
+# etc.
+```

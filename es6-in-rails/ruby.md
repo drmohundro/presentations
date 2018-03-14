@@ -8,9 +8,10 @@
 
 ## You could just wing it and hope the browser supports it...
 
-![Browser Fight](images/browser-fight.jpg)
+![Browser Fight](./images/browser-fight.jpg)
 
 Note:
+
 * ES6 works in Firefox after all.
 * See [ES6 compat table](http://kangax.github.io/compat-table/es6/)
 * Depending on the browser, you might get decently far actually
@@ -38,6 +39,7 @@ They all compile to JavaScript
 (watch ["The Birth and Death of JavaScript"](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript))
 
 Note:
+
 * per @jashkenas, ["this was always part of the plan"](https://news.ycombinator.com/item?id=8972404) re: CoffeeScript. CS (and other transpiled languages) moved the language forward to help prepare for ES6
 * remember those 10 years of _nothing_?
 
@@ -52,5 +54,6 @@ gem 'sprockets-es6'
 (assuming you're using Sprockets...)
 
 Note:
+
 * ES6 support is coming with [Sprockets 4.0](https://github.com/sstephenson/sprockets/pull/682)
 * In the meantime, if you're on Sprockets 3.0, you can use the `sprockets-es6` [gem](https://github.com/TannerRogalsky/sprockets-es6).

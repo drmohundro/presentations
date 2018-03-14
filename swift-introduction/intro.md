@@ -1,6 +1,6 @@
 ## Introduction to Swift
 
-![Swift](/images/swift_logo.png)
+![Swift](./images/swift_logo.png)
 
 David Mohundro
 

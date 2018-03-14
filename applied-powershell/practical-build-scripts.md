@@ -28,9 +28,9 @@ delivery with PowerShell.
 
 ## The most common build script library is Psake
 
-<blockquote><a href="https://github.com/psake/psake">psake</a> is pronounced
-sake – as in Japanese rice wine. It does NOT rhyme with make, bake, or
-rake.</blockquote>
+> [psake](https://github.com/psake/psake) is pronounced
+> sake – as in Japanese rice wine. It does NOT rhyme with make, bake, or
+> rake.
 
 It follows in the steps of tools like Rake to write build scripts in a DSL instead of in XML.
 
@@ -38,28 +38,31 @@ It follows in the steps of tools like Rake to write build scripts in a DSL inste
 
 ## A simple example
 
-    Task default -Depends Test
-    Task Test -Depends Compile, Clean {
-      "This is a test"
-    }
+```powershell
+Task default -Depends Test
+Task Test -Depends Compile, Clean {
+  "This is a test"
+}
 
-    Task Compile -Depends Clean {
-      "Compile"
-    }
+Task Compile -Depends Clean {
+  "Compile"
+}
 
-    Task Clean {
-      "Clean"
-    }
-   
+Task Clean {
+  "Clean"
+}
+```
+
 <aside class="notes" data-markdown>
 * at it's most simple level, it is just a dependency tree of tasks
 </aside>
-    
+
 <..>
-    
+
 ## A more involved example
 
-<pre><code>properties {
+```powershell
+properties {
     $src = "../PowerShellHoster/"
     $solution = "$src/PowerShellHoster.sln"
     $buildPath = "$src/PowerShellHoster.App/bin/Debug/"
@@ -75,7 +78,8 @@ Task Compile {
 Task Deploy -depends Compile {
     $buildDate = [DateTime]::Now.ToString("yyyy-MM-dd HH-mm-ss")
     Write-Zip $buildPath "$deployPath/$buildDate.zip"
-}</code></pre>
+}
+```
 
 <aside class="notes" data-markdown>
 * the properties block is where you set up variables, constants and utility methods
@@ -96,8 +100,8 @@ Task Deploy -depends Compile {
   * Allows for TeamCity-specific functionality plus debug builds locally
 * We do more than just compile our code
   * We also run unit tests
-  * We added a call to `aspnet_compiler` to verify our Razor views 
-* Things we *don't* do
+  * We added a call to `aspnet_compiler` to verify our Razor views
+* Things we _don't_ do
   * We don't zip up our builds... we let TeamCity do this
   * We don't name our builds... again, TeamCity does this
 

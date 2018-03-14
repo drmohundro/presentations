@@ -16,14 +16,15 @@ Lots, as you'll see...
 </div>
 
 <div style="float: right; width: 45%;">
-![Process](/images/definition-process.png)
+![Process](./images/definition-process.png)
 </div>
 
 Note:
-- "heavy" is relative, but when we're talking about threading, it is the heaviest unit of work
-- Note that the rule of sharing memory with other processes is actually a security boundary... and you can get to the memory of other processes if you have high enough privileges
-    - As an example, debuggers can peak into your program's memory. And this is why debuggers require elevated permissions.
-    - Still, you have to jump through hoops to do this.
+
+* "heavy" is relative, but when we're talking about threading, it is the heaviest unit of work
+* Note that the rule of sharing memory with other processes is actually a security boundary... and you can get to the memory of other processes if you have high enough privileges
+  * As an example, debuggers can peak into your program's memory. And this is why debuggers require elevated permissions.
+  * Still, you have to jump through hoops to do this.
 
 <..>
 
@@ -45,29 +46,31 @@ Note:
 </div>
 
 <div style="float: right; width: 45%;">
-![Process](/images/definition-thread.png)
+![Process](./images/definition-thread.png)
 </div>
 
 Note:
-- As an aside, it is interesting that in Linux, scheduling is done at the "task" level
-   - A task could be a thread or a single-threaded process... to the scheduler, they're the same thing
+
+* As an aside, it is interesting that in Linux, scheduling is done at the "task" level
+  * A task could be a thread or a single-threaded process... to the scheduler, they're the same thing
 
 <..>
 
 ## Fiber
 
-- "Lightweight thread"
-- Fibers have to yield control back when they're done
-- This means that fibers cannot be truly multiprocessor, though, because two fibers cannot run at the same time
-- Process memory is shared *but is not accessed at the same time*
+* "Lightweight thread"
+* Fibers have to yield control back when they're done
+* This means that fibers cannot be truly multiprocessor, though, because two fibers cannot run at the same time
+* Process memory is shared _but is not accessed at the same time_
 
 Note:
-- No screenshot because I have no idea which Windows processes even use fibers
-- This slide is more for informational purposes... you'll see fibers show up more in non-Windows environments (e.g. Rails can use fiber-based parallelism)
 
-- It is theoretically possible to implement a CLR host that can manage threading entirely on its own
-   - SQL Server Yukon (2005) wanted to use fibers for its threads in its CLR host (i.e. SQLCLR) instead of full threads
-   - In response, the CLR team tried to add fiber support in Whidbey (.NET 2.0)
+* No screenshot because I have no idea which Windows processes even use fibers
+* This slide is more for informational purposes... you'll see fibers show up more in non-Windows environments (e.g. Rails can use fiber-based parallelism)
+
+* It is theoretically possible to implement a CLR host that can manage threading entirely on its own
+  * SQL Server Yukon (2005) wanted to use fibers for its threads in its CLR host (i.e. SQLCLR) instead of full threads
+  * In response, the CLR team tried to add fiber support in Whidbey (.NET 2.0)
 
 > Eventually, mostly due to schedule pressure and a long stress bug tail related to fiber-mode, we threw up our hands and declared it unsupported." (via http://joeduffyblog.com/2006/11/09/fibers-and-the-clr/)
 
@@ -75,12 +78,12 @@ Note:
 
 ## So, I'm a .NET developer... do I care about this?
 
-![Don't Care](/images/dont-care.gif)
+![Don't Care](./images/dont-care.gif)
 
 <..>
 
 ## You SHOULD care
 
 * It helps you understand why you shouldn't believe that adding threads makes your application faster
-   * It *can* make it faster, but only in specific scenarios
+  * It _can_ make it faster, but only in specific scenarios
 * Moore's law is changing which means our programming practices need to change, too

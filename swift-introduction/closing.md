@@ -6,4 +6,4 @@ David Mohundro
 
 [Presentation is available on Github](https://github.com/drmohundro/presentations)
 
-![Swift Cat](/images/taylor-swift-cat-fight.gif)
+![Swift Cat](./images/taylor-swift-cat-fight.gif)

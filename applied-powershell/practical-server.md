@@ -22,7 +22,7 @@ We can go from a fresh Windows Server 2008 R2 (or 2012) VM to a fully configured
 ## How we configure servers
 
 * We actually use [Chef](https://github.com/opscode/chef) to configure servers
-  * It just happens to call *a lot* of PowerShell
+  * It just happens to call _a lot_ of PowerShell
 * We install utilities...
   * Sysinternals, Chrome, Sublime Text 2, 3rd party tools, etc.
 * We configure...
@@ -36,17 +36,19 @@ We can go from a fresh Windows Server 2008 R2 (or 2012) VM to a fully configured
 
 ## Quick IIS examples
 
-    # needed for the IIS: psdrive
-    Import-Module WebAdministration
+```powershell
+# needed for the IIS: psdrive
+Import-Module WebAdministration
 
-    # list all started appPools
-    ls ./AppPools | where State -eq 'Started'
+# list all started appPools
+ls ./AppPools | where State -eq 'Started'
 
-    # see if an appPool is 32-bit or not
-    Get-Item .\AppPools\MyAppPoolName | select enable32BitAppOnWin64
+# see if an appPool is 32-bit or not
+Get-Item .\AppPools\MyAppPoolName | select enable32BitAppOnWin64
 
-    # create a new website
-    New-Website 'powershell-yay' -PhysicalPath 'c:\temp'
+# create a new website
+New-Website 'powershell-yay' -PhysicalPath 'c:\temp'
+```
 
 <aside class="notes" data-markdown>
 * gvim c:\temp\index.html

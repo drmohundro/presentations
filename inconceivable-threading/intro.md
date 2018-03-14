@@ -1,6 +1,6 @@
 ## Inconceivable Threading
 
-![Inconceivable](/images/inconceivable.jpg)
+![Inconceivable](./images/inconceivable.jpg)
 
 David Mohundro
 
@@ -9,8 +9,8 @@ David Mohundro
 ## Outline
 
 * Intro
-    - History
-    - Types of Work
+  * History
+  * Types of Work
 * What Does Threading Solve?
 * Threading Basics (optional)
 * Modern Threading
@@ -19,7 +19,7 @@ David Mohundro
 
 ## But, Before We Start...
 
-![Loading](/images/loading.gif)
+![Loading](./images/loading.gif)
 
 <..>
 
@@ -28,4 +28,3 @@ David Mohundro
 ### What Does It Solve?
 
 (discuss)
-

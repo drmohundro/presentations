@@ -1,6 +1,7 @@
 # Closing
 
-<!-- .slide: data-background-image="/images/closing.gif" -->
+<!-- .slide: data-background-image="./images/closing.gif" -->
+
 <!-- .slide: class="shadowed-text" -->
 
 <..>
@@ -15,9 +16,10 @@
 * Measure performance! Do you need those additional threads? And remember scalability, too!
 
 Note:
-- For example, if you don't have lots of ASP.NET threads blocking, IIS can send more requests through. If you do have lots of ASP.NET threads that are blocked, your server can't respond as quickly.
-- How many LOB applications can really use parallelization? *Particularly if you're on the web.* Client-side may require more parallelization.
-- Scalability is very important when talking about the web - if you're spinning up a lot of threads, you're hurting the overall performance of your site.
+
+* For example, if you don't have lots of ASP.NET threads blocking, IIS can send more requests through. If you do have lots of ASP.NET threads that are blocked, your server can't respond as quickly.
+* How many LOB applications can really use parallelization? _Particularly if you're on the web._ Client-side may require more parallelization.
+* Scalability is very important when talking about the web - if you're spinning up a lot of threads, you're hurting the overall performance of your site.
 
 <..>
 
@@ -25,4 +27,4 @@ Note:
 
 [Presentation is available on Github](https://github.com/drmohundro/presentations)
 
-![High Fives!](/images/high-fives.gif)
+![High Fives!](./images/high-fives.gif)

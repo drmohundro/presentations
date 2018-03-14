@@ -3,24 +3,26 @@
 <..>
 
 ## Before we get started
+
 ### The top four cmdlets to remember...
 
-        Get-Help
-        # alias is man
-        # can also use by typing in a command and then -?
+```powershell
+Get-Help
+# alias is man
+# can also use by typing in a command and then -?
 
-        Get-Command
-        # alias is gcm
-        # sort of like `which` in UNIX
+Get-Command
+# alias is gcm
+# sort of like `which` in UNIX
 
-        Get-Member
-        # alias is gm
-        # usually used by piping something into `Get-Member`
+Get-Member
+# alias is gm
+# usually used by piping something into `Get-Member`
 
-        Get-PSDrive
-        # get currently mounted PSDrives
-        # i.e. what can I "cd" into
-
+Get-PSDrive
+# get currently mounted PSDrives
+# i.e. what can I "cd" into
+```
 
 <aside class="notes" data-markdown>
 It would be good to demo all of these if time allows... *especially* get-command and get-member
@@ -40,22 +42,25 @@ Yahoo has an RSS based API that we can use at [http://developer.yahoo.com/weathe
 <..>
 
 ## Get-Weather.ps1
+
 Let's create the file and add some basic documentation
 
-    <#
-    .Synopsis
-        Gets the weather by zipcode
-    .Description
-        Calls the Yahoo Weather API to get the forecast for the specified zipcode and in the specified degrees.
-    .Notes
-        Author: David Mohundro
-    .Link
-        http://mohundro.com
-    .Link
-        http://developer.yahoo.com/weather/
-    .Parameter ZipCode
-        The zipcode to get the weather for
-    #>
+```powershell
+<#
+.Synopsis
+    Gets the weather by zipcode
+.Description
+    Calls the Yahoo Weather API to get the forecast for the specified zipcode and in the specified degrees.
+.Notes
+    Author: David Mohundro
+.Link
+    http://mohundro.com
+.Link
+    http://developer.yahoo.com/weather/
+.Parameter ZipCode
+    The zipcode to get the weather for
+#>
+```
 
 <aside class="notes" data-markdown>
   Comment headers don't just help for documentation, they are parsed by PowerShell
@@ -70,7 +75,8 @@ We've got documentation... how do we want to call this script? Maybe `Get-Weathe
 
 We can default to Fahrenheit.
 
-<pre><code>param (
+```powershell
+param (
     [Parameter(Mandatory)]
     [string]
     $ZipCode,
@@ -80,7 +86,8 @@ We can default to Fahrenheit.
 
     [switch]
     $InCelcius
-)</code></pre>
+)
+```
 
 <..>
 
@@ -94,7 +101,7 @@ But... how? We *could* pull in [System.ServiceModel.Syndication](http://msdn.mic
 Let's try finding something useful with `Get-Command`
 </span>
 
-<pre class="fragment"><code># Invoke-RestMethod new in v3
+<pre class="fragment"><code class="powershell"># Invoke-RestMethod new in v3
 Invoke-RestMethod "http://weather.yahooapis.com/forecastrss?p=$ZipCode&u=$temperatureUnit"
 </code></pre>
 
@@ -109,74 +116,78 @@ gcm *web* -commandtype cmdlet | where modulename -ne 'WebAdministration'
 # Hmm... Invoke-WebRequests looks promising.
 get-help invoke-webrequest
 # check out the related links... Invoke-RestMethod
-get-help invoke-resetmethod -full
+get-help invoke-restmethod -full
 # check out the RSS example... RIGHT THERE!!!
 </pre>
 
 * use Invoke-RestMethod (which knows about RSS) against it
 * $result = Invoke-RestMethod "http://weather.yahooapis.com/forecastrss?p=38002&u=F" | select Title, Condition, Forecast
   * look at the $result instance
-</aside>
+    </aside>
 
 <..>
 
 ## Building a container for our data
 
-    # syntax is new in v3
-    [PSCustomObject]@{
-        Title = $results.title
-        Condition = $results.condition.text
-        Temperature = $results.condition.temp
-        TodaysForecastTemp = "$($results.forecast[0].low)$tempUnit-$($results.forecast[0].high)$tempUnit"
-        TodaysForecastCondition = $results.forecast[0].text
-        TomorrowsForecastTemp = "$($results.forecast[1].low)$tempUnit-$($results.forecast[1].high)$tempUnit"
-        TomorrowsForecastCondition = $results.forecast[1].text
-    }
+```powershell
+# syntax is new in v3
+[PSCustomObject]@{
+    Title = $results.title
+    Condition = $results.condition.text
+    Temperature = $results.condition.temp
+    TodaysForecastTemp = "$($results.forecast[0].low)$tempUnit-$($results.forecast[0].high)$tempUnit"
+    TodaysForecastCondition = $results.forecast[0].text
+    TomorrowsForecastTemp = "$($results.forecast[1].low)$tempUnit-$($results.forecast[1].high)$tempUnit"
+    TomorrowsForecastCondition = $results.forecast[1].text
+}
+```
 
 <..>
 
 ## Full Script
 
-    <#
-    .Synopsis
-        Gets the weather by zipcode
-    .Description
-        Calls the Yahoo Weather API to get the forecast for the specified zipcode and in the specified degrees.
-    .Notes
-        Author: David Mohundro
-    .Link
-        http://mohundro.com
-    .Link
-        http://developer.yahoo.com/weather/
-    .Parameter ZipCode
-        The zipcode to get the weather for
-    #>
+```powershell
+<#
+.Synopsis
+    Gets the weather by zipcode
+.Description
+    Calls the Yahoo Weather API to get the forecast for the specified zipcode and in the specified degrees.
+.Notes
+    Author: David Mohundro
+.Link
+    http://mohundro.com
+.Link
+    http://developer.yahoo.com/weather/
+.Parameter ZipCode
+    The zipcode to get the weather for
+#>
 
-    param (
-        [Parameter(Mandatory)]
-        [string]
-        $ZipCode,
+param (
+    [Parameter(Mandatory)]
+    [string]
+    $ZipCode,
 
-        [switch]
-        $InFahrenheit,
+    [switch]
+    $InFahrenheit,
 
-        [switch]
-        $InCelcius
-    )
+    [switch]
+    $InCelcius
+)
 
-    $tempUnit = if ($InFahrenheit) { "f" } elseif ($InCelcius) { "c" } else { "f" }
+$tempUnit = if ($InFahrenheit) { "f" } elseif ($InCelcius) { "c" } else { "f" }
 
-    $results = Invoke-RestMethod "http://weather.yahooapis.com/forecastrss?p=$ZipCode&u=$tempUnit" |
-        Select Title, Condition, Forecast
+$results = Invoke-RestMethod "http://weather.yahooapis.com/forecastrss?p=$ZipCode&u=$tempUnit" |
+    Select Title, Condition, Forecast
 
-    $tempUnit = $tempUnit.ToUpper()
+$tempUnit = $tempUnit.ToUpper()
 
-    [PSCustomObject]@{
-        Title = $results.title
-        Condition = $results.condition.text
-        Temperature = $results.condition.temp
-        TodaysForecastTemp = "$($results.forecast[0].low)$tempUnit-$($results.forecast[0].high)$tempUnit"
-        TodaysForecastCondition = $results.forecast[0].text
-        TomorrowsForecastTemp = "$($results.forecast[1].low)$tempUnit-$($results.forecast[1].high)$tempUnit"
-        TomorrowsForecastCondition = $results.forecast[1].text
-    }
+[PSCustomObject]@{
+    Title = $results.title
+    Condition = $results.condition.text
+    Temperature = $results.condition.temp
+    TodaysForecastTemp = "$($results.forecast[0].low)$tempUnit-$($results.forecast[0].high)$tempUnit"
+    TodaysForecastCondition = $results.forecast[0].text
+    TomorrowsForecastTemp = "$($results.forecast[1].low)$tempUnit-$($results.forecast[1].high)$tempUnit"
+    TomorrowsForecastCondition = $results.forecast[1].text
+}
+```

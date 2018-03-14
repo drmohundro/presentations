@@ -1,4 +1,5 @@
-## Let's Move On To... 
+## Let's Move On To...
+
 # Profile Customizations
 
 <..>
@@ -27,56 +28,62 @@
 
 ## Easiest way to get started is...
 
-    # I'd recommend a different editor, but it probably won't be in your PATH at first...
-    notepad $profile
-    
+```powershell
+# I'd recommend a different editor, but it probably won't be in your PATH at first...
+notepad $profile
+```
+
 <..>
 
 ## Simple prompt examples
 
-    # simple prompt, looks like $ _
-    function prompt {
-      '$ '
-    }
-    
-    # display the time in your prompt, looks like 9:51 AM> _
-    function prompt {
-      "$([DateTime]::Now.ToShortTimeString())> "
-    }
-    
-    # display the current directory (notice we have to put the '>' there)
-    # this one looks just like cmd.exe
-    function prompt {
-      "$($pwd.Path)> "
-    }
-    
+```powershell
+# simple prompt, looks like $ _
+function prompt {
+  '$ '
+}
+
+# display the time in your prompt, looks like 9:51 AM> _
+function prompt {
+  "$([DateTime]::Now.ToShortTimeString())> "
+}
+
+# display the current directory (notice we have to put the '>' there)
+# this one looks just like cmd.exe
+function prompt {
+  "$($pwd.Path)> "
+}
+```
+
 <..>
 
 ## What about displaying the weather?
 
-    function prompt {
-        # note the -nonewline parameter
-        Write-Host "$($pwd.Path) " -nonewline
-        $weather = Get-Weather 38002
+```powershell
+function prompt {
+    # note the -nonewline parameter
+    Write-Host "$($pwd.Path) " -nonewline
+    $weather = Get-Weather 38002
 
-        # let's change the color for this (note you could make the color different depending on the conditions)
-        # we do want a new line here
-        Write-Host "[$($weather.Temperature) $($weather.Condition)]" -foregroundColor Green
+    # let's change the color for this (note you could make the color different depending on the conditions)
+    # we do want a new line here
+    Write-Host "[$($weather.Temperature) $($weather.Condition)]" -foregroundColor Green
 
-        # starting second line... let's add some sort of thing here, like a '>'
-        Write-Host ">" -nonewline
+    # starting second line... let's add some sort of thing here, like a '>'
+    Write-Host ">" -nonewline
 
-        # because Write-Host doesn't return anything, we still need to return something here
-        ' '
-    }
-    
+    # because Write-Host doesn't return anything, we still need to return something here
+    ' '
+}
+```
+
 <..>
 
 ## Prompt Tricks
 
 * Instead of using `$pwd.Path`, I like to replace `$HOME` with '~'
 * I have a `$promptCalls` variable that I use to add additional data to my prompt
-  * Things like the weather 
+  * Things like the weather
   * Alert data ("IIS isn't running", "Service isn't running", "Password expires tomorrow", etc.)
   * Source control status (git, hg, etc.)
     * Libraries like [posh-git](https://github.com/dahlbyk/posh-git) and [posh-hg](https://github.com/JeremySkinner/posh-hg) do this for you
