@@ -1,0 +1,27 @@
+PODS:
+  - Alamofire (4.5.1)
+  - Arrow (3.0.5)
+  - Kingfisher (4.6.4)
+  - SteviaLayout (4.0.0)
+  - thenPromise (3.0.2)
+  - ws (3.0.0):
+    - Alamofire (~> 4.5.1)
+    - Arrow (~> 3.0.5)
+    - thenPromise (~> 3.0.0)
+
+DEPENDENCIES:
+  - Kingfisher (~> 4.0)
+  - SteviaLayout (~> 4.0)
+  - ws (~> 3.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Arrow: b696d6173296da330d1a995019db42f693249cd6
+  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
+  SteviaLayout: 2d6b6d7e9554fa7b2c7c2aba12337b23cf897123
+  thenPromise: bba8a0f054d17643cd00378a8f7f0d67db4425fb
+  ws: 1690376f0653ecea866a08c0874bc59e32d206c2
+
+PODFILE CHECKSUM: 5c90e76134d1da9af78925ca2ffa801a9e9e7cf0
+
+COCOAPODS: 1.3.1

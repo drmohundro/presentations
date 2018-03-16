@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Introduction to Swift">
+  <meta name="author" content="David Mohundro">
+
+  <title>Introduction to Swift - by David Mohundro</title>
+
+  <link rel="stylesheet" href="../vendor/revealjs/css/reveal.css">
+  <link rel="stylesheet" href="../vendor/revealjs/css/theme/black.css">
+
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="../vendor/revealjs/lib/css/monokai.css">
+
+  <link href="../node_modules/vis/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? '../vendor/revealjs/css/print/pdf.css' : '../vendor/revealjs/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+    console.log("hi")
+  </script>
+
+  <style>
+    .cf-watermark {
+      position: fixed;
+      width: 80px;
+      z-index: 30;
+      left: 25px;
+      bottom: 25px;
+    }
+
+    .img-no-border {
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    .shadowed-text h1 {
+      text-shadow: -4px -4px 0 #000000, -4px -3px 0 #000000, -4px -2px 0 #000000, -4px -1px 0 #000000, -4px 0px 0 #000000, -4px 1px 0 #000000, -4px 2px 0 #000000, -4px 3px 0 #000000, -4px 4px 0 #000000, -3px -4px 0 #000000, -3px -3px 0 #000000, -3px -2px 0 #000000, -3px -1px 0 #000000, -3px 0px 0 #000000, -3px 1px 0 #000000, -3px 2px 0 #000000, -3px 3px 0 #000000, -3px 4px 0 #000000, -2px -4px 0 #000000, -2px -3px 0 #000000, -2px -2px 0 #000000, -2px -1px 0 #000000, -2px 0px 0 #000000, -2px 1px 0 #000000, -2px 2px 0 #000000, -2px 3px 0 #000000, -2px 4px 0 #000000, -1px -4px 0 #000000, -1px -3px 0 #000000, -1px -2px 0 #000000, -1px -1px 0 #000000, -1px 0px 0 #000000, -1px 1px 0 #000000, -1px 2px 0 #000000, -1px 3px 0 #000000, -1px 4px 0 #000000, 0px -4px 0 #000000, 0px -3px 0 #000000, 0px -2px 0 #000000, 0px -1px 0 #000000, 0px 0px 0 #000000, 0px 1px 0 #000000, 0px 2px 0 #000000, 0px 3px 0 #000000, 0px 4px 0 #000000, 1px -4px 0 #000000, 1px -3px 0 #000000, 1px -2px 0 #000000, 1px -1px 0 #000000, 1px 0px 0 #000000, 1px 1px 0 #000000, 1px 2px 0 #000000, 1px 3px 0 #000000, 1px 4px 0 #000000, 2px -4px 0 #000000, 2px -3px 0 #000000, 2px -2px 0 #000000, 2px -1px 0 #000000, 2px 0px 0 #000000, 2px 1px 0 #000000, 2px 2px 0 #000000, 2px 3px 0 #000000, 2px 4px 0 #000000, 3px -4px 0 #000000, 3px -3px 0 #000000, 3px -2px 0 #000000, 3px -1px 0 #000000, 3px 0px 0 #000000, 3px 1px 0 #000000, 3px 2px 0 #000000, 3px 3px 0 #000000, 3px 4px 0 #000000, 4px -4px 0 #000000, 4px -3px 0 #000000, 4px -2px 0 #000000, 4px -1px 0 #000000, 4px 0px 0 #000000, 4px 1px 0 #000000, 4px 2px 0 #000000, 4px 3px 0 #000000, 4px 4px 0 #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown="./md/01-intro.md" data-separator="^<-->" data-separator-vertical="^<..>"></section>
+      <section data-markdown="./md/02-what.md" data-separator="^<-->" data-separator-vertical="^<..>" data-state="timeline"></section>
+      <section data-markdown="./md/03-learning.md" data-separator="^<-->" data-separator-vertical="^<..>"></section>
+      <section data-markdown="./md/04-using.md" data-separator="^<-->" data-separator-vertical="^<..>"></section>
+      <section data-markdown="./md/05-oss.md" data-separator="^<-->" data-separator-vertical="^<..>"></section>
+      <section data-markdown="./md/06-closing.md" data-separator="^<-->" data-separator-vertical="^<..>"></section>
+    </div>
+
+    <aside class="cf-watermark">
+      <img src="../shared/images/clear-function-logo-white.svg" alt="Clear Function" />
+    </aside>
+  </div>
+
+  <script src="../vendor/revealjs/lib/js/head.min.js"></script>
+  <script src="../vendor/revealjs/js/reveal.js"></script>
+
+  <script src="../node_modules/vis/dist/vis.min.js"></script>
+
+  <script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    console.log("hi")
+    Reveal.initialize({
+      history: true,
+
+      // More info https://github.com/hakimel/reveal.js#dependencies
+      dependencies: [
+        { src: '../vendor/revealjs/plugin/markdown/marked.js' },
+        { src: '../vendor/revealjs/plugin/markdown/markdown.js' },
+        { src: '../vendor/revealjs/plugin/notes/notes.js', async: true },
+        { src: '../vendor/revealjs/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+
+    Reveal.addEventListener('timeline', function () {
+      function newDate(year, month, day) {
+        // note that months are zero-based in the JavaScript Date object, sigh
+        return new Date(year, month - 1, day);
+      }
+
+      /*
+        {
+          'start': new Date(2012,7,27),
+          'end': new Date(2012,8,1),
+          'content': 'orange',
+          'className': 'orange'
+        },
+        */
+
+      // NOTE: see also https://time.graphics/line/73068
+
+      // create data
+      var data = new vis.DataSet([
+        {
+          'start': newDate(2014, 6, 2),
+          'content': 'Swift Announced'
+        },
+        {
+          'start': newDate(2014, 9, 9),
+          'content': 'Swift 1.0'
+        },
+        {
+          'start': newDate(2014, 10, 22),
+          'content': 'Swift 1.1'
+        },
+        {
+          'start': newDate(2015, 4, 8),
+          'content': 'Swift 1.2'
+        },
+        {
+          'start': newDate(2015, 9, 21),
+          'content': 'Swift 2.0'
+        },
+        {
+          'start': newDate(2015, 12, 3),
+          'content': 'Swift Open Sourced'
+        },
+        {
+          'start': newDate(2016, 9, 13),
+          'content': 'Swift 3.0'
+        },
+        {
+          'start': newDate(2017, 9, 19),
+          'content': 'Swift 4.0'
+        }
+      ]);
+
+      var swxmlhashDates = new vis.DataSet([
+        {
+          'start': newDate(2014, 7, 8),
+          'content': 'SWXMLHash initial commit',
+          'description': 'https://github.com/drmohundro/SWXMLHash/commit/497de2b34cda5114971acf07bbfa179f5991cab7'
+        },
+        {
+          'start': newDate(2014, 8, 19),
+          'content': 'First SWXMLHash PR',
+          'description': 'https://github.com/drmohundro/SWXMLHash/pull/4'
+        },
+        {
+          'start': newDate(2015, 1, 30),
+          'content': 'SWXMLHash pushed to CocoaPods'
+        },
+        {
+          'start': newDate(2015, 4, 10),
+          'content': 'SWXMLHash 1.0'
+        },
+        {
+          'start': newDate(2015, 9, 16),
+          'content': 'SWXMLHash 2.0'
+        },
+        {
+          'start': newDate(2016, 9, 13),
+          'content': 'SWXMLHash 3.0'
+        },
+        {
+          'start': newDate(2016, 9, 13),
+          'content': 'SWXMLHash 3.0'
+        },
+        {
+          'start': newDate(2017, 5, 31),
+          'content': 'SWXMLHash 4.0'
+        }
+      ]);
+
+      // specify options
+      var options = {
+        editable: true
+      };
+
+      // create the timeline
+      var container = document.getElementById('mytimeline');
+      timeline = new vis.Timeline(container, data, options);
+    }, false);
+
+  </script>
+</body>
+
+</html>

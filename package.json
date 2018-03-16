@@ -1,0 +1,11 @@
+{
+  "name": "presentations",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:drmohundro/presentations.git",
+  "author": "David Mohundro <david@mohundro.com>",
+  "license": "MIT",
+  "dependencies": {
+    "vis": "^4.21.0"
+  }
+}
