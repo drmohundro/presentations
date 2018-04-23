@@ -58,7 +58,7 @@ strong typing, implicit typing, mutable and immutable variables, OO, functional 
 
 # Getting Started
 
-<!-- .slide: data-background-image="./images/celebrate.gif" -->
+<!-- .slide: data-background-image="https://user-images.githubusercontent.com/43072/39103308-aa5d8d02-466f-11e8-9f1b-503e765c38ad.gif" -->
 
 <!-- .slide: class="shadowed-text" -->
 
