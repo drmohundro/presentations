@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: "swift"
+    directories:
+      - "/2018-introduction-to-swift/src/*"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+    groups:
+      swift-deps:
+        patterns: ["*"]
+
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "tuesday"
+    exclude-paths:
+      - "2015-es6-in-rails/**"
+      - "vendor/**"
+    groups:
+      ruby-deps:
+        patterns: ["*"]
